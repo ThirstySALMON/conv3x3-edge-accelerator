@@ -1,1 +1,0 @@
-# conv3x3-edge-accelerator
