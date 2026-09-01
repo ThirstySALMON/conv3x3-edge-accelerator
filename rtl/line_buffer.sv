@@ -1,36 +1,33 @@
-module line_buffer (
-    input logic clk,
-    input logic rst_n,
-    input logic [7:0] d_in,
-    input logic en,
+import cnn_pkg::*;
 
-    output logic [7:0] d_out
+// One full row of vertical delay: DEPTH-deep, IN_W-wide FF/LUTRAM shift
+// register. Deliberately NOT a BRAM (100x FoM penalty). en-gated so a
+// stall freezes the whole pipeline coherently.
+module line_buffer #(
+    parameter int DEPTH = LB_DEPTH,
+    parameter int WIDTH = IN_W
+) (
+    input  logic             clk,
+    input  logic             rst_n,
+    input  logic [WIDTH-1:0] d_in,
+    input  logic             en,
 
+    output logic [WIDTH-1:0] d_out
 );
 
-logic [7:0] sr [0:31];
+    logic [WIDTH-1:0] sr [0:DEPTH-1];
 
-integer i;
-    always_ff @(posedge clk) begin
+    always_ff @(posedge clk) begin           // synchronous reset (intentional)
         if (!rst_n) begin
-            for (i =0 ;i < 32 ;i++ ) begin
+            for (int i = 0; i < DEPTH; i++)
                 sr[i] <= '0;
-            end
-
         end else if (en) begin
-           
             sr[0] <= d_in;
-            for (  i =  1 ; i < 32  ; i++ ) begin
-                sr[i] <= sr[i-1]; 
-            end
-
-
+            for (int i = 1; i < DEPTH; i++)
+                sr[i] <= sr[i-1];
         end
-    
-
     end
 
-    assign d_out = sr[31];
+    assign d_out = sr[DEPTH-1];              // oldest element falls out
 
 endmodule
-    
