@@ -1,0 +1,14 @@
+$date
+	Tue Sep 01 11:15:26 2026
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_top $end
+$var parameter 32 ! CLK_PERIOD $end
+$var reg 1 " clk $end
+$var reg 1 # rst_n $end
