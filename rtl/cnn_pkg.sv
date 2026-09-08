@@ -45,4 +45,15 @@ package cnn_pkg;
 
     parameter int NPIX = IMG_W * IMG_H;        // 1024 outputs per frame
 
+    // Cycles of output-only draining after the last input pixel is consumed.
+    // Book-keeping argument: every enabled cycle is consume-only (FILL),
+    // consume+output (STREAM), or output-only (DRAIN). Consumes must total
+    // NPIX and outputs must total NPIX, so
+    //     output-only cycles == consume-only cycles == FILL_CYCLES.
+    // The last output (31,31) needs FILL_CYCLES+NPIX-1 = 1057 shifts, but only
+    // NPIX = 1024 real pixels exist; the remaining 33 shifts push garbage into
+    // the bottom tap row, which bottom_edge/right_edge mask on exactly those
+    // outputs, so nothing leaks.
+    parameter int DRAIN_CYCLES = FILL_CYCLES;  // 34
+
 endpackage

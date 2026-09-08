@@ -1,0 +1,5120 @@
+hramp  window 0   (r=0, c=0)   top, left
+    00  00  00      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 1   (r=0, c=1)   top
+    00  00  00      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 2   (r=0, c=2)   top
+    00  00  00      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 3   (r=0, c=3)   top
+    00  00  00      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 4   (r=0, c=4)   top
+    00  00  00      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 5   (r=0, c=5)   top
+    00  00  00      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 6   (r=0, c=6)   top
+    00  00  00      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 7   (r=0, c=7)   top
+    00  00  00      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 8   (r=0, c=8)   top
+    00  00  00      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 9   (r=0, c=9)   top
+    00  00  00      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 10   (r=0, c=10)   top
+    00  00  00      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 11   (r=0, c=11)   top
+    00  00  00      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 12   (r=0, c=12)   top
+    00  00  00      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 13   (r=0, c=13)   top
+    00  00  00      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 14   (r=0, c=14)   top
+    00  00  00      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 15   (r=0, c=15)   top
+    00  00  00      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 16   (r=0, c=16)   top
+    00  00  00      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 17   (r=0, c=17)   top
+    00  00  00      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 18   (r=0, c=18)   top
+    00  00  00      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 19   (r=0, c=19)   top
+    00  00  00      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 20   (r=0, c=20)   top
+    00  00  00      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 21   (r=0, c=21)   top
+    00  00  00      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 22   (r=0, c=22)   top
+    00  00  00      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 23   (r=0, c=23)   top
+    00  00  00      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 24   (r=0, c=24)   top
+    00  00  00      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 25   (r=0, c=25)   top
+    00  00  00      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 26   (r=0, c=26)   top
+    00  00  00      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 27   (r=0, c=27)   top
+    00  00  00      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 28   (r=0, c=28)   top
+    00  00  00      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 29   (r=0, c=29)   top
+    00  00  00      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 30   (r=0, c=30)   top
+    00  00  00      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 31   (r=0, c=31)   top, right
+    00  00  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 32   (r=1, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 33   (r=1, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 34   (r=1, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 35   (r=1, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 36   (r=1, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 37   (r=1, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 38   (r=1, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 39   (r=1, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 40   (r=1, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 41   (r=1, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 42   (r=1, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 43   (r=1, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 44   (r=1, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 45   (r=1, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 46   (r=1, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 47   (r=1, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 48   (r=1, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 49   (r=1, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 50   (r=1, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 51   (r=1, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 52   (r=1, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 53   (r=1, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 54   (r=1, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 55   (r=1, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 56   (r=1, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 57   (r=1, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 58   (r=1, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 59   (r=1, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 60   (r=1, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 61   (r=1, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 62   (r=1, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 63   (r=1, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 64   (r=2, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 65   (r=2, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 66   (r=2, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 67   (r=2, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 68   (r=2, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 69   (r=2, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 70   (r=2, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 71   (r=2, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 72   (r=2, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 73   (r=2, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 74   (r=2, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 75   (r=2, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 76   (r=2, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 77   (r=2, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 78   (r=2, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 79   (r=2, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 80   (r=2, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 81   (r=2, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 82   (r=2, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 83   (r=2, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 84   (r=2, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 85   (r=2, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 86   (r=2, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 87   (r=2, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 88   (r=2, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 89   (r=2, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 90   (r=2, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 91   (r=2, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 92   (r=2, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 93   (r=2, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 94   (r=2, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 95   (r=2, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 96   (r=3, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 97   (r=3, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 98   (r=3, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 99   (r=3, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 100   (r=3, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 101   (r=3, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 102   (r=3, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 103   (r=3, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 104   (r=3, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 105   (r=3, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 106   (r=3, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 107   (r=3, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 108   (r=3, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 109   (r=3, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 110   (r=3, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 111   (r=3, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 112   (r=3, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 113   (r=3, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 114   (r=3, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 115   (r=3, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 116   (r=3, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 117   (r=3, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 118   (r=3, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 119   (r=3, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 120   (r=3, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 121   (r=3, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 122   (r=3, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 123   (r=3, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 124   (r=3, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 125   (r=3, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 126   (r=3, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 127   (r=3, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 128   (r=4, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 129   (r=4, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 130   (r=4, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 131   (r=4, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 132   (r=4, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 133   (r=4, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 134   (r=4, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 135   (r=4, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 136   (r=4, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 137   (r=4, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 138   (r=4, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 139   (r=4, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 140   (r=4, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 141   (r=4, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 142   (r=4, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 143   (r=4, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 144   (r=4, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 145   (r=4, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 146   (r=4, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 147   (r=4, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 148   (r=4, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 149   (r=4, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 150   (r=4, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 151   (r=4, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 152   (r=4, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 153   (r=4, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 154   (r=4, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 155   (r=4, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 156   (r=4, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 157   (r=4, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 158   (r=4, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 159   (r=4, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 160   (r=5, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 161   (r=5, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 162   (r=5, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 163   (r=5, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 164   (r=5, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 165   (r=5, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 166   (r=5, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 167   (r=5, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 168   (r=5, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 169   (r=5, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 170   (r=5, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 171   (r=5, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 172   (r=5, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 173   (r=5, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 174   (r=5, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 175   (r=5, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 176   (r=5, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 177   (r=5, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 178   (r=5, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 179   (r=5, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 180   (r=5, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 181   (r=5, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 182   (r=5, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 183   (r=5, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 184   (r=5, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 185   (r=5, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 186   (r=5, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 187   (r=5, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 188   (r=5, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 189   (r=5, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 190   (r=5, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 191   (r=5, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 192   (r=6, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 193   (r=6, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 194   (r=6, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 195   (r=6, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 196   (r=6, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 197   (r=6, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 198   (r=6, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 199   (r=6, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 200   (r=6, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 201   (r=6, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 202   (r=6, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 203   (r=6, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 204   (r=6, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 205   (r=6, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 206   (r=6, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 207   (r=6, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 208   (r=6, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 209   (r=6, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 210   (r=6, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 211   (r=6, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 212   (r=6, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 213   (r=6, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 214   (r=6, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 215   (r=6, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 216   (r=6, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 217   (r=6, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 218   (r=6, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 219   (r=6, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 220   (r=6, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 221   (r=6, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 222   (r=6, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 223   (r=6, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 224   (r=7, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 225   (r=7, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 226   (r=7, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 227   (r=7, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 228   (r=7, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 229   (r=7, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 230   (r=7, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 231   (r=7, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 232   (r=7, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 233   (r=7, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 234   (r=7, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 235   (r=7, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 236   (r=7, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 237   (r=7, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 238   (r=7, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 239   (r=7, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 240   (r=7, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 241   (r=7, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 242   (r=7, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 243   (r=7, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 244   (r=7, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 245   (r=7, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 246   (r=7, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 247   (r=7, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 248   (r=7, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 249   (r=7, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 250   (r=7, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 251   (r=7, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 252   (r=7, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 253   (r=7, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 254   (r=7, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 255   (r=7, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 256   (r=8, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 257   (r=8, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 258   (r=8, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 259   (r=8, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 260   (r=8, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 261   (r=8, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 262   (r=8, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 263   (r=8, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 264   (r=8, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 265   (r=8, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 266   (r=8, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 267   (r=8, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 268   (r=8, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 269   (r=8, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 270   (r=8, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 271   (r=8, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 272   (r=8, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 273   (r=8, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 274   (r=8, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 275   (r=8, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 276   (r=8, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 277   (r=8, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 278   (r=8, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 279   (r=8, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 280   (r=8, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 281   (r=8, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 282   (r=8, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 283   (r=8, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 284   (r=8, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 285   (r=8, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 286   (r=8, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 287   (r=8, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 288   (r=9, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 289   (r=9, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 290   (r=9, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 291   (r=9, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 292   (r=9, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 293   (r=9, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 294   (r=9, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 295   (r=9, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 296   (r=9, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 297   (r=9, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 298   (r=9, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 299   (r=9, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 300   (r=9, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 301   (r=9, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 302   (r=9, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 303   (r=9, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 304   (r=9, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 305   (r=9, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 306   (r=9, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 307   (r=9, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 308   (r=9, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 309   (r=9, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 310   (r=9, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 311   (r=9, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 312   (r=9, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 313   (r=9, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 314   (r=9, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 315   (r=9, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 316   (r=9, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 317   (r=9, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 318   (r=9, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 319   (r=9, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 320   (r=10, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 321   (r=10, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 322   (r=10, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 323   (r=10, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 324   (r=10, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 325   (r=10, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 326   (r=10, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 327   (r=10, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 328   (r=10, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 329   (r=10, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 330   (r=10, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 331   (r=10, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 332   (r=10, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 333   (r=10, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 334   (r=10, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 335   (r=10, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 336   (r=10, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 337   (r=10, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 338   (r=10, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 339   (r=10, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 340   (r=10, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 341   (r=10, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 342   (r=10, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 343   (r=10, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 344   (r=10, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 345   (r=10, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 346   (r=10, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 347   (r=10, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 348   (r=10, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 349   (r=10, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 350   (r=10, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 351   (r=10, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 352   (r=11, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 353   (r=11, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 354   (r=11, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 355   (r=11, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 356   (r=11, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 357   (r=11, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 358   (r=11, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 359   (r=11, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 360   (r=11, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 361   (r=11, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 362   (r=11, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 363   (r=11, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 364   (r=11, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 365   (r=11, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 366   (r=11, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 367   (r=11, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 368   (r=11, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 369   (r=11, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 370   (r=11, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 371   (r=11, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 372   (r=11, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 373   (r=11, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 374   (r=11, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 375   (r=11, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 376   (r=11, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 377   (r=11, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 378   (r=11, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 379   (r=11, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 380   (r=11, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 381   (r=11, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 382   (r=11, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 383   (r=11, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 384   (r=12, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 385   (r=12, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 386   (r=12, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 387   (r=12, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 388   (r=12, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 389   (r=12, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 390   (r=12, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 391   (r=12, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 392   (r=12, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 393   (r=12, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 394   (r=12, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 395   (r=12, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 396   (r=12, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 397   (r=12, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 398   (r=12, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 399   (r=12, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 400   (r=12, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 401   (r=12, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 402   (r=12, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 403   (r=12, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 404   (r=12, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 405   (r=12, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 406   (r=12, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 407   (r=12, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 408   (r=12, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 409   (r=12, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 410   (r=12, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 411   (r=12, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 412   (r=12, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 413   (r=12, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 414   (r=12, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 415   (r=12, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 416   (r=13, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 417   (r=13, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 418   (r=13, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 419   (r=13, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 420   (r=13, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 421   (r=13, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 422   (r=13, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 423   (r=13, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 424   (r=13, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 425   (r=13, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 426   (r=13, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 427   (r=13, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 428   (r=13, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 429   (r=13, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 430   (r=13, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 431   (r=13, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 432   (r=13, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 433   (r=13, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 434   (r=13, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 435   (r=13, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 436   (r=13, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 437   (r=13, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 438   (r=13, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 439   (r=13, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 440   (r=13, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 441   (r=13, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 442   (r=13, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 443   (r=13, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 444   (r=13, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 445   (r=13, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 446   (r=13, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 447   (r=13, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 448   (r=14, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 449   (r=14, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 450   (r=14, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 451   (r=14, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 452   (r=14, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 453   (r=14, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 454   (r=14, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 455   (r=14, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 456   (r=14, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 457   (r=14, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 458   (r=14, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 459   (r=14, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 460   (r=14, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 461   (r=14, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 462   (r=14, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 463   (r=14, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 464   (r=14, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 465   (r=14, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 466   (r=14, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 467   (r=14, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 468   (r=14, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 469   (r=14, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 470   (r=14, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 471   (r=14, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 472   (r=14, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 473   (r=14, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 474   (r=14, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 475   (r=14, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 476   (r=14, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 477   (r=14, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 478   (r=14, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 479   (r=14, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 480   (r=15, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 481   (r=15, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 482   (r=15, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 483   (r=15, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 484   (r=15, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 485   (r=15, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 486   (r=15, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 487   (r=15, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 488   (r=15, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 489   (r=15, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 490   (r=15, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 491   (r=15, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 492   (r=15, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 493   (r=15, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 494   (r=15, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 495   (r=15, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 496   (r=15, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 497   (r=15, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 498   (r=15, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 499   (r=15, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 500   (r=15, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 501   (r=15, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 502   (r=15, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 503   (r=15, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 504   (r=15, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 505   (r=15, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 506   (r=15, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 507   (r=15, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 508   (r=15, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 509   (r=15, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 510   (r=15, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 511   (r=15, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 512   (r=16, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 513   (r=16, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 514   (r=16, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 515   (r=16, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 516   (r=16, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 517   (r=16, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 518   (r=16, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 519   (r=16, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 520   (r=16, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 521   (r=16, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 522   (r=16, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 523   (r=16, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 524   (r=16, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 525   (r=16, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 526   (r=16, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 527   (r=16, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 528   (r=16, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 529   (r=16, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 530   (r=16, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 531   (r=16, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 532   (r=16, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 533   (r=16, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 534   (r=16, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 535   (r=16, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 536   (r=16, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 537   (r=16, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 538   (r=16, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 539   (r=16, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 540   (r=16, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 541   (r=16, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 542   (r=16, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 543   (r=16, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 544   (r=17, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 545   (r=17, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 546   (r=17, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 547   (r=17, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 548   (r=17, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 549   (r=17, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 550   (r=17, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 551   (r=17, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 552   (r=17, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 553   (r=17, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 554   (r=17, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 555   (r=17, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 556   (r=17, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 557   (r=17, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 558   (r=17, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 559   (r=17, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 560   (r=17, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 561   (r=17, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 562   (r=17, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 563   (r=17, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 564   (r=17, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 565   (r=17, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 566   (r=17, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 567   (r=17, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 568   (r=17, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 569   (r=17, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 570   (r=17, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 571   (r=17, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 572   (r=17, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 573   (r=17, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 574   (r=17, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 575   (r=17, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 576   (r=18, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 577   (r=18, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 578   (r=18, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 579   (r=18, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 580   (r=18, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 581   (r=18, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 582   (r=18, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 583   (r=18, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 584   (r=18, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 585   (r=18, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 586   (r=18, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 587   (r=18, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 588   (r=18, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 589   (r=18, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 590   (r=18, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 591   (r=18, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 592   (r=18, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 593   (r=18, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 594   (r=18, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 595   (r=18, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 596   (r=18, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 597   (r=18, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 598   (r=18, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 599   (r=18, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 600   (r=18, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 601   (r=18, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 602   (r=18, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 603   (r=18, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 604   (r=18, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 605   (r=18, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 606   (r=18, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 607   (r=18, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 608   (r=19, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 609   (r=19, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 610   (r=19, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 611   (r=19, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 612   (r=19, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 613   (r=19, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 614   (r=19, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 615   (r=19, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 616   (r=19, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 617   (r=19, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 618   (r=19, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 619   (r=19, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 620   (r=19, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 621   (r=19, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 622   (r=19, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 623   (r=19, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 624   (r=19, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 625   (r=19, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 626   (r=19, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 627   (r=19, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 628   (r=19, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 629   (r=19, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 630   (r=19, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 631   (r=19, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 632   (r=19, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 633   (r=19, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 634   (r=19, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 635   (r=19, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 636   (r=19, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 637   (r=19, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 638   (r=19, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 639   (r=19, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 640   (r=20, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 641   (r=20, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 642   (r=20, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 643   (r=20, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 644   (r=20, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 645   (r=20, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 646   (r=20, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 647   (r=20, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 648   (r=20, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 649   (r=20, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 650   (r=20, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 651   (r=20, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 652   (r=20, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 653   (r=20, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 654   (r=20, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 655   (r=20, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 656   (r=20, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 657   (r=20, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 658   (r=20, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 659   (r=20, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 660   (r=20, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 661   (r=20, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 662   (r=20, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 663   (r=20, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 664   (r=20, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 665   (r=20, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 666   (r=20, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 667   (r=20, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 668   (r=20, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 669   (r=20, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 670   (r=20, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 671   (r=20, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 672   (r=21, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 673   (r=21, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 674   (r=21, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 675   (r=21, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 676   (r=21, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 677   (r=21, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 678   (r=21, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 679   (r=21, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 680   (r=21, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 681   (r=21, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 682   (r=21, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 683   (r=21, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 684   (r=21, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 685   (r=21, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 686   (r=21, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 687   (r=21, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 688   (r=21, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 689   (r=21, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 690   (r=21, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 691   (r=21, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 692   (r=21, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 693   (r=21, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 694   (r=21, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 695   (r=21, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 696   (r=21, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 697   (r=21, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 698   (r=21, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 699   (r=21, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 700   (r=21, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 701   (r=21, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 702   (r=21, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 703   (r=21, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 704   (r=22, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 705   (r=22, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 706   (r=22, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 707   (r=22, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 708   (r=22, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 709   (r=22, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 710   (r=22, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 711   (r=22, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 712   (r=22, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 713   (r=22, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 714   (r=22, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 715   (r=22, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 716   (r=22, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 717   (r=22, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 718   (r=22, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 719   (r=22, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 720   (r=22, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 721   (r=22, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 722   (r=22, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 723   (r=22, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 724   (r=22, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 725   (r=22, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 726   (r=22, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 727   (r=22, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 728   (r=22, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 729   (r=22, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 730   (r=22, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 731   (r=22, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 732   (r=22, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 733   (r=22, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 734   (r=22, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 735   (r=22, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 736   (r=23, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 737   (r=23, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 738   (r=23, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 739   (r=23, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 740   (r=23, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 741   (r=23, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 742   (r=23, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 743   (r=23, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 744   (r=23, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 745   (r=23, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 746   (r=23, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 747   (r=23, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 748   (r=23, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 749   (r=23, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 750   (r=23, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 751   (r=23, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 752   (r=23, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 753   (r=23, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 754   (r=23, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 755   (r=23, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 756   (r=23, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 757   (r=23, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 758   (r=23, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 759   (r=23, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 760   (r=23, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 761   (r=23, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 762   (r=23, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 763   (r=23, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 764   (r=23, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 765   (r=23, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 766   (r=23, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 767   (r=23, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 768   (r=24, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 769   (r=24, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 770   (r=24, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 771   (r=24, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 772   (r=24, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 773   (r=24, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 774   (r=24, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 775   (r=24, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 776   (r=24, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 777   (r=24, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 778   (r=24, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 779   (r=24, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 780   (r=24, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 781   (r=24, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 782   (r=24, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 783   (r=24, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 784   (r=24, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 785   (r=24, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 786   (r=24, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 787   (r=24, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 788   (r=24, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 789   (r=24, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 790   (r=24, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 791   (r=24, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 792   (r=24, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 793   (r=24, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 794   (r=24, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 795   (r=24, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 796   (r=24, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 797   (r=24, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 798   (r=24, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 799   (r=24, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 800   (r=25, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 801   (r=25, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 802   (r=25, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 803   (r=25, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 804   (r=25, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 805   (r=25, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 806   (r=25, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 807   (r=25, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 808   (r=25, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 809   (r=25, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 810   (r=25, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 811   (r=25, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 812   (r=25, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 813   (r=25, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 814   (r=25, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 815   (r=25, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 816   (r=25, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 817   (r=25, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 818   (r=25, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 819   (r=25, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 820   (r=25, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 821   (r=25, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 822   (r=25, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 823   (r=25, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 824   (r=25, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 825   (r=25, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 826   (r=25, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 827   (r=25, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 828   (r=25, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 829   (r=25, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 830   (r=25, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 831   (r=25, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 832   (r=26, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 833   (r=26, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 834   (r=26, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 835   (r=26, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 836   (r=26, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 837   (r=26, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 838   (r=26, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 839   (r=26, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 840   (r=26, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 841   (r=26, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 842   (r=26, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 843   (r=26, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 844   (r=26, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 845   (r=26, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 846   (r=26, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 847   (r=26, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 848   (r=26, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 849   (r=26, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 850   (r=26, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 851   (r=26, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 852   (r=26, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 853   (r=26, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 854   (r=26, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 855   (r=26, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 856   (r=26, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 857   (r=26, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 858   (r=26, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 859   (r=26, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 860   (r=26, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 861   (r=26, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 862   (r=26, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 863   (r=26, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 864   (r=27, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 865   (r=27, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 866   (r=27, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 867   (r=27, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 868   (r=27, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 869   (r=27, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 870   (r=27, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 871   (r=27, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 872   (r=27, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 873   (r=27, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 874   (r=27, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 875   (r=27, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 876   (r=27, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 877   (r=27, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 878   (r=27, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 879   (r=27, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 880   (r=27, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 881   (r=27, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 882   (r=27, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 883   (r=27, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 884   (r=27, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 885   (r=27, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 886   (r=27, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 887   (r=27, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 888   (r=27, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 889   (r=27, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 890   (r=27, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 891   (r=27, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 892   (r=27, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 893   (r=27, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 894   (r=27, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 895   (r=27, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 896   (r=28, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 897   (r=28, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 898   (r=28, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 899   (r=28, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 900   (r=28, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 901   (r=28, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 902   (r=28, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 903   (r=28, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 904   (r=28, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 905   (r=28, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 906   (r=28, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 907   (r=28, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 908   (r=28, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 909   (r=28, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 910   (r=28, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 911   (r=28, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 912   (r=28, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 913   (r=28, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 914   (r=28, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 915   (r=28, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 916   (r=28, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 917   (r=28, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 918   (r=28, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 919   (r=28, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 920   (r=28, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 921   (r=28, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 922   (r=28, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 923   (r=28, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 924   (r=28, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 925   (r=28, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 926   (r=28, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 927   (r=28, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 928   (r=29, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 929   (r=29, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 930   (r=29, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 931   (r=29, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 932   (r=29, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 933   (r=29, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 934   (r=29, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 935   (r=29, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 936   (r=29, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 937   (r=29, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 938   (r=29, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 939   (r=29, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 940   (r=29, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 941   (r=29, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 942   (r=29, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 943   (r=29, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 944   (r=29, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 945   (r=29, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 946   (r=29, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 947   (r=29, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 948   (r=29, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 949   (r=29, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 950   (r=29, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 951   (r=29, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 952   (r=29, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 953   (r=29, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 954   (r=29, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 955   (r=29, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 956   (r=29, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 957   (r=29, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 958   (r=29, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 959   (r=29, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 960   (r=30, c=0)   left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  08      <- taps 6-8
+
+hramp  window 961   (r=30, c=1)   interior
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  08  10      <- taps 6-8
+
+hramp  window 962   (r=30, c=2)   interior
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    08  10  18      <- taps 6-8
+
+hramp  window 963   (r=30, c=3)   interior
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    10  18  20      <- taps 6-8
+
+hramp  window 964   (r=30, c=4)   interior
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    18  20  28      <- taps 6-8
+
+hramp  window 965   (r=30, c=5)   interior
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    20  28  30      <- taps 6-8
+
+hramp  window 966   (r=30, c=6)   interior
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    28  30  38      <- taps 6-8
+
+hramp  window 967   (r=30, c=7)   interior
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    30  38  40      <- taps 6-8
+
+hramp  window 968   (r=30, c=8)   interior
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    38  40  48      <- taps 6-8
+
+hramp  window 969   (r=30, c=9)   interior
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    40  48  50      <- taps 6-8
+
+hramp  window 970   (r=30, c=10)   interior
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    48  50  58      <- taps 6-8
+
+hramp  window 971   (r=30, c=11)   interior
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    50  58  60      <- taps 6-8
+
+hramp  window 972   (r=30, c=12)   interior
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    58  60  68      <- taps 6-8
+
+hramp  window 973   (r=30, c=13)   interior
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    60  68  70      <- taps 6-8
+
+hramp  window 974   (r=30, c=14)   interior
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    68  70  78      <- taps 6-8
+
+hramp  window 975   (r=30, c=15)   interior
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    70  78  80      <- taps 6-8
+
+hramp  window 976   (r=30, c=16)   interior
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    78  80  88      <- taps 6-8
+
+hramp  window 977   (r=30, c=17)   interior
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    80  88  90      <- taps 6-8
+
+hramp  window 978   (r=30, c=18)   interior
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    88  90  98      <- taps 6-8
+
+hramp  window 979   (r=30, c=19)   interior
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    90  98  a0      <- taps 6-8
+
+hramp  window 980   (r=30, c=20)   interior
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    98  a0  a8      <- taps 6-8
+
+hramp  window 981   (r=30, c=21)   interior
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    a0  a8  b0      <- taps 6-8
+
+hramp  window 982   (r=30, c=22)   interior
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    a8  b0  b8      <- taps 6-8
+
+hramp  window 983   (r=30, c=23)   interior
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    b0  b8  c0      <- taps 6-8
+
+hramp  window 984   (r=30, c=24)   interior
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    b8  c0  c8      <- taps 6-8
+
+hramp  window 985   (r=30, c=25)   interior
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    c0  c8  d0      <- taps 6-8
+
+hramp  window 986   (r=30, c=26)   interior
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    c8  d0  d8      <- taps 6-8
+
+hramp  window 987   (r=30, c=27)   interior
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    d0  d8  e0      <- taps 6-8
+
+hramp  window 988   (r=30, c=28)   interior
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    d8  e0  e8      <- taps 6-8
+
+hramp  window 989   (r=30, c=29)   interior
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    e0  e8  f0      <- taps 6-8
+
+hramp  window 990   (r=30, c=30)   interior
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    e8  f0  f8      <- taps 6-8
+
+hramp  window 991   (r=30, c=31)   right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    f0  f8  00      <- taps 6-8
+
+hramp  window 992   (r=31, c=0)   bottom, left
+    00  00  08      <- taps 0-2
+    00 [00] 08      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 993   (r=31, c=1)   bottom
+    00  08  10      <- taps 0-2
+    00 [08] 10      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 994   (r=31, c=2)   bottom
+    08  10  18      <- taps 0-2
+    08 [10] 18      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 995   (r=31, c=3)   bottom
+    10  18  20      <- taps 0-2
+    10 [18] 20      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 996   (r=31, c=4)   bottom
+    18  20  28      <- taps 0-2
+    18 [20] 28      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 997   (r=31, c=5)   bottom
+    20  28  30      <- taps 0-2
+    20 [28] 30      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 998   (r=31, c=6)   bottom
+    28  30  38      <- taps 0-2
+    28 [30] 38      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 999   (r=31, c=7)   bottom
+    30  38  40      <- taps 0-2
+    30 [38] 40      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1000   (r=31, c=8)   bottom
+    38  40  48      <- taps 0-2
+    38 [40] 48      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1001   (r=31, c=9)   bottom
+    40  48  50      <- taps 0-2
+    40 [48] 50      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1002   (r=31, c=10)   bottom
+    48  50  58      <- taps 0-2
+    48 [50] 58      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1003   (r=31, c=11)   bottom
+    50  58  60      <- taps 0-2
+    50 [58] 60      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1004   (r=31, c=12)   bottom
+    58  60  68      <- taps 0-2
+    58 [60] 68      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1005   (r=31, c=13)   bottom
+    60  68  70      <- taps 0-2
+    60 [68] 70      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1006   (r=31, c=14)   bottom
+    68  70  78      <- taps 0-2
+    68 [70] 78      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1007   (r=31, c=15)   bottom
+    70  78  80      <- taps 0-2
+    70 [78] 80      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1008   (r=31, c=16)   bottom
+    78  80  88      <- taps 0-2
+    78 [80] 88      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1009   (r=31, c=17)   bottom
+    80  88  90      <- taps 0-2
+    80 [88] 90      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1010   (r=31, c=18)   bottom
+    88  90  98      <- taps 0-2
+    88 [90] 98      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1011   (r=31, c=19)   bottom
+    90  98  a0      <- taps 0-2
+    90 [98] a0      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1012   (r=31, c=20)   bottom
+    98  a0  a8      <- taps 0-2
+    98 [a0] a8      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1013   (r=31, c=21)   bottom
+    a0  a8  b0      <- taps 0-2
+    a0 [a8] b0      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1014   (r=31, c=22)   bottom
+    a8  b0  b8      <- taps 0-2
+    a8 [b0] b8      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1015   (r=31, c=23)   bottom
+    b0  b8  c0      <- taps 0-2
+    b0 [b8] c0      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1016   (r=31, c=24)   bottom
+    b8  c0  c8      <- taps 0-2
+    b8 [c0] c8      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1017   (r=31, c=25)   bottom
+    c0  c8  d0      <- taps 0-2
+    c0 [c8] d0      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1018   (r=31, c=26)   bottom
+    c8  d0  d8      <- taps 0-2
+    c8 [d0] d8      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1019   (r=31, c=27)   bottom
+    d0  d8  e0      <- taps 0-2
+    d0 [d8] e0      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1020   (r=31, c=28)   bottom
+    d8  e0  e8      <- taps 0-2
+    d8 [e0] e8      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1021   (r=31, c=29)   bottom
+    e0  e8  f0      <- taps 0-2
+    e0 [e8] f0      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1022   (r=31, c=30)   bottom
+    e8  f0  f8      <- taps 0-2
+    e8 [f0] f8      <- taps 3-5
+    00  00  00      <- taps 6-8
+
+hramp  window 1023   (r=31, c=31)   bottom, right
+    f0  f8  00      <- taps 0-2
+    f0 [f8] 00      <- taps 3-5
+    00  00  00      <- taps 6-8
+

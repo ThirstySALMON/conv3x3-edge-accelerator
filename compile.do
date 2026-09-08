@@ -21,8 +21,11 @@ vlog -work work -sv rtl/cnn_pkg.sv
 # ---- RTL ----
 vlog -work work -sv rtl/line_buffer.sv
 vlog -work work -sv rtl/window_gen.sv
+vlog -work work -sv rtl/control_unit.sv
+vlog -work work -sv rtl/top.sv
 
 # ---- testbenches ----
 vlog -work work -sv tb/tb_window_gen_unit.sv
+vlog -work work -sv tb/tb_top.sv
 
 echo "compile.do: done."
