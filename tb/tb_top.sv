@@ -2,201 +2,137 @@
 `timescale 1ns/1ps
 import cnn_pkg::*;
 
+// one kernel, one frame. image in -> pixel_out, diffed against the golden hex.
+//   vsim work.tb_top +KERNEL=sobel_x            (default)
+//   vsim work.tb_top +KERNEL=sharpen +STALL=1   drops valid_in a few times mid frame
+// writes hw_out/<kernel>_out.hex. window level checks live in tb_top_window.sv.
 module tb_top;
-logic  clk = 0;
-logic  rst_n = 0;                       
 
-logic [IN_W-1:0]  input_in;
-logic             valid_in;
-logic             write_en   = 1'b0;    // kernel port unused until mac3x3 lands
-logic [3:0]       write_addr = 4'd0;
-logic [7:0]       data_write = 8'd0;
-logic [15:0]      pixel_out;
-logic             valid_out;
-logic             busy;
-logic [IN_W-1:0]   taps [0:NTAP-1]; // comment out , for debug
+string kernel = "sobel_x";
+int    stall  = 0;
 
+logic clk = 0, rst_n = 0;
+logic [IN_W-1:0]    input_in;
+logic               valid_in   = 0;
+logic               write_en   = 0;
+logic [3:0]         write_addr = 0;
+logic [7:0]         data_write = 0;
+logic signed [15:0] pixel_out;
+logic               valid_out, busy;
+logic [IN_W-1:0]    taps [0:NTAP-1]; // comment out , for debug
 
-// instantiate top level clk 
 top dut (
     .clk(clk), .rst_n(rst_n),
     .input_in(input_in), .valid_in(valid_in),
     .write_en(write_en), .write_addr(write_addr), .data_write(data_write),
-    .pixel_out(pixel_out), .valid_out(valid_out), .busy(busy) ,.taps(taps) // comment out , for debug
+    .pixel_out(pixel_out), .valid_out(valid_out), .busy(busy), .taps(taps) // comment out , for debug
 );
 
+always #5 clk = ~clk;
 
-localparam real CLK_PERIOD = 10;
-always #(CLK_PERIOD/2) clk=~clk;
+logic [7:0]  img  [0:NPIX-1];
+logic [7:0]  coef [0:NTAP-1];
+logic [15:0] gold [0:NPIX-1];
+logic [15:0] hw   [0:NPIX-1];
 
-initial begin
-    $dumpfile("tb_top.vcd");
-    $dumpvars(0, tb_top);
-end
+int cyc = 0, out_cnt = 0, pix_err = 0, lat_err = 0;
+int bubbles = 0, stall_cyc = 0, stall_stream = 0;
+int first_in = -1, first_out = -1, last_out = -1;
+int fh;
+logic [2:0] wv_d = '0;      // win_valid delayed 1..3
+bit win_started = 0;
 
-// ------------------------------------------------------------------ ADDED --
-// Golden windows: 1024 lines x 9 bytes, row-major tap order (see spec S8).
-logic [7:0] gwin [0:NPIX*9-1];
-initial $readmemh("golden_model/vectors/hramp_windows_same.hex", gwin);
-
-int  cyc            = 0;   // cycles since reset release
-int  win_cnt        = 0;   // windows accepted so far
-int  tap_err        = 0;
-int  pos_err        = 0;
-int  gap_err        = 0;
-int  first_win_cyc  = -1;
-int  first_con_cyc  = -1;
-int  last_win_cyc   = -1;
-int  exp_r, exp_c;
-
-
-// helper 
-function automatic string sname(input logic [2:0] s);
-    case (s)
-        3'd0: sname = "IDLE  ";
-        3'd1: sname = "FILL  ";
-        3'd2: sname = "STREAM";
-        3'd3: sname = "DRAIN ";
-        3'd4: sname = "DONE  ";
-        default: sname = "??????";
+// stalls to inject before pixel i when +STALL=1
+function automatic int stall_len(input int i);
+    if (!stall) return 0;
+    case (i)
+        10:      return 2;   // still filling, no bubble expected
+        300:     return 3;
+        511:     return 1;   // row boundary
+        700:     return 8;
+        1023:    return 4;   // right before the last pixel
+        default: return 0;
     endcase
 endfunction
 
-
-
-// FSM transition trace
-logic [2:0] prev_state = 3'd0;
 always @(posedge clk) if (rst_n) begin
-    if (dut.u_cu.state !== prev_state)
-        $display("  [cyc %4d] FSM %s -> %s   (in_cnt=%0d drain_cnt=%0d busy=%0b)",
-                 cyc, sname(prev_state), sname(dut.u_cu.state),
-                 dut.u_cu.in_cnt, dut.u_cu.drain_cnt, busy);
-    prev_state = dut.u_cu.state;
-end
-
-// Scoreboard: every win_valid cycle must present the next golden window at the
-// right raster position, with the right edge flags, and with no gap.
-always @(posedge clk) if (rst_n) begin
-    cyc = cyc + 1;
-    if (dut.en && first_con_cyc < 0) first_con_cyc = cyc;
-    if (dut.win_valid) begin
-        if (first_win_cyc < 0) first_win_cyc = cyc;
-        else if (cyc != last_win_cyc + 1) begin
-            gap_err = gap_err + 1;
-            $display("  GAP: win %0d at cyc %0d, previous at %0d", win_cnt, cyc, last_win_cyc);
-        end
-        last_win_cyc = cyc;
-
-        exp_r = win_cnt / IMG_W;
-        exp_c = win_cnt % IMG_W;
-
-        if (win_cnt < NPIX) begin
-            for (int k = 0; k < NTAP; k++)
-                if (dut.tap_out[k] !== gwin[win_cnt*9 + k]) begin
-                    if (tap_err < 20)
-                        $display("  TAP MISMATCH win %0d (r=%0d,c=%0d) tap%0d: got %02h exp %02h",
-                                 win_cnt, exp_r, exp_c, k, dut.tap_out[k], gwin[win_cnt*9+k]);
-                    tap_err = tap_err + 1;
-                end
-
-            if (dut.u_cu.out_r !== exp_r[$clog2(IMG_H)-1:0] ||
-                dut.u_cu.out_c !== exp_c[$clog2(IMG_W)-1:0]) begin
-                if (pos_err < 20)
-                    $display("  POS MISMATCH win %0d: fsm(r,c)=(%0d,%0d) exp (%0d,%0d)",
-                             win_cnt, dut.u_cu.out_r, dut.u_cu.out_c, exp_r, exp_c);
-                pos_err = pos_err + 1;
-            end
-
-            if (dut.top_edge    !== (exp_r == 0)        ||
-                dut.bottom_edge !== (exp_r == IMG_H-1)  ||
-                dut.left_edge   !== (exp_c == 0)        ||
-                dut.right_edge  !== (exp_c == IMG_W-1)) begin
-                if (pos_err < 20)
-                    $display("  EDGE MISMATCH win %0d (r=%0d,c=%0d): T/B/L/R=%0b%0b%0b%0b",
-                             win_cnt, exp_r, exp_c,
-                             dut.top_edge, dut.bottom_edge, dut.left_edge, dut.right_edge);
-                pos_err = pos_err + 1;
+    cyc++;
+    wv_d <= {wv_d[1:0], dut.win_valid};
+    if (valid_out !== wv_d[2]) lat_err++;                   // valid_out is win_valid 3 cycles later, always
+    if (dut.win_valid) win_started = 1;
+    if (!valid_in && dut.u_cu.state == 2 && win_started) stall_stream++;   // 2 = S_STREAM. a stall before the first window only delays it
+    if (valid_in && first_in < 0) first_in = cyc;
+    if (valid_out) begin
+        if (first_out < 0) first_out = cyc;
+        else bubbles += cyc - last_out - 1;
+        last_out = cyc;
+        if (out_cnt < NPIX) begin
+            hw[out_cnt] = pixel_out;
+            if (pixel_out !== gold[out_cnt]) begin
+                if (pix_err < 10)
+                    $display("  mismatch %0d (r%0d c%0d): got %0d exp %0d", out_cnt,
+                             out_cnt/IMG_W, out_cnt%IMG_W, pixel_out, $signed(gold[out_cnt]));
+                pix_err++;
             end
         end
-        win_cnt = win_cnt + 1;
+        out_cnt++;
     end
 end
-// ---------------------------------------------------------------- /ADDED --
-
-integer i;                              // ADDED (loop var for the stream)
 
 initial begin
+    if (!$value$plusargs("KERNEL=%s", kernel)) kernel = "sobel_x";
+    void'($value$plusargs("STALL=%d", stall));
+    $readmemh("golden_model/hex/image.hex", img);
+    $readmemh({"golden_model/hex/", kernel, "_coef.hex"}, coef);
+    $readmemh({"golden_model/hex/", kernel, "_out.hex"},  gold);
+    $dumpfile("sim/out/tb_top.vcd");
+    $dumpvars(0, tb_top);
 
-
-
-
-    /* 
-    1.load vectors from chosen file (1024 elements for 32* 32) 
-    2. go through the reset sequence for the module 
-    3. initialize with selected coefficients 
-    4. stream the data and record throughput /latency in cycles 
-    5. save outputs to file 
-    6 compare with golden model 
-    7. Output statistics to a file with a specific format and to a TCL console 
-*/
-
-
-   // 1.load inputs and verification 
-    logic [7:0] in_hex[0:1023];
-    logic [7:0] golden_hex[0:1023];
-    $readmemh("golden_model/vectors/hramp_in.hex" , in_hex);
-    // TODO: automate file loading 
-    // $readmemh("" , golden_hex);      // output golden is 16-bit (golden_model/hex/<k>_out.hex);
-                                        // wire it up once mac3x3 + saturate exist
-    //
-
-    rst_n = 0;
     repeat (4) @(posedge clk);
     rst_n <= 1;
-
-    // -------------------------------------------------------------- ADDED --
-    // 4. stream the frame: 1024 pixels, gapless, one per cycle.
-    valid_in <= 1'b0;
-    input_in <= 8'h00;
     @(posedge clk);
 
-    for (i = 0; i < NPIX; i++) begin
-        input_in <= in_hex[i];
-        valid_in <= 1'b1;
+    // coeffs go in before the frame, the port is locked while busy
+    for (int i = 0; i < NTAP; i++) begin
+        write_en <= 1; write_addr <= i; data_write <= coef[i];
         @(posedge clk);
     end
-
-    // Input exhausted. Garbage on the bus during drain: bottom_edge/right_edge
-    // must mask it out of every remaining window.
-    valid_in <= 1'b0;
-    input_in <= 8'hA5;
+    write_en <= 0;
     @(posedge clk);
 
-    // let the FSM drain and retire
-    i = 0;
-    while (!dut.frame_done && i < 4*NPIX) begin
+    for (int i = 0; i < NPIX; i++) begin
+        repeat (stall_len(i)) begin           // hold valid_in low with junk on the bus
+            valid_in <= 0; input_in <= 8'hA5; stall_cyc++;
+            @(posedge clk);
+        end
+        valid_in <= 1; input_in <= img[i];
         @(posedge clk);
-        i = i + 1;
     end
-    repeat (4) @(posedge clk);
+    valid_in <= 0; input_in <= 8'hA5;         // junk during drain, the edge masks have to hide it
+
+    wait (!busy);
+    repeat (8) @(posedge clk);                // last 3 outputs are still in the pipe when busy drops
+
+    fh = $fopen({"hw_out/", kernel, "_out.hex"}, "w");
+    if (fh) begin
+        for (int i = 0; i < NPIX; i++) $fdisplay(fh, "%04h", hw[i]);
+        $fclose(fh);
+    end else
+        $display("  couldn't open hw_out/, nothing written");
 
     $display("--------------------------------------------------------------");
-    $display("  windows produced : %0d   (expected %0d)", win_cnt, NPIX);
-    $display("  fill latency     : %0d cycles from first en to first win_valid (FILL_CYCLES = %0d)",
-             first_win_cyc - first_con_cyc, FILL_CYCLES);
-    $display("  last  win_valid  : cycle %0d", last_win_cyc);
-    $display("  throughput       : %0d windows over %0d cycles",
-             win_cnt, (last_win_cyc - first_win_cyc + 1));
-    $display("  tap errors       : %0d", tap_err);
-    $display("  position/edge err: %0d", pos_err);
-    $display("  valid_out gaps   : %0d", gap_err);
-    if (win_cnt == NPIX && tap_err == 0 && pos_err == 0 && gap_err == 0)
-        $display("  PASS: taps + FSM correct, 1024 gapless windows.");
+    $display("  tb_top  kernel=%0s  stall=%0d", kernel, stall);
+    $display("  outputs      : %0d / %0d", out_cnt, NPIX);
+    $display("  latency      : %0d cycles, first valid_in -> first valid_out", first_out - first_in);
+    $display("  throughput   : %0d outputs in %0d cycles", out_cnt, last_out - first_out + 1);
+    $display("  stalls       : %0d injected, %0d in STREAM, %0d bubbles in valid_out",
+             stall_cyc, stall_stream, bubbles);
+    $display("  pixel errors : %0d", pix_err);
+    if (out_cnt == NPIX && pix_err == 0 && bubbles == stall_stream && lat_err == 0)
+        $display("  PASS");
     else
-        $display("  FAIL");
+        $display("  FAIL  (lat_err=%0d)", lat_err);
     $display("--------------------------------------------------------------");
-    // ------------------------------------------------------------ /ADDED --
-
     $finish(2);
 end
 

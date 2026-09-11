@@ -30,6 +30,9 @@ def conv(img, k, relu=False):
     return out
 
 def load_image(path):
+    if path.endswith(".hex"):   # reuse an existing image.hex so the outputs stay in sync with it
+        v = [int(l, 16) for l in open(path) if l.strip()]
+        return np.array(v, dtype=np.uint8).reshape(IMG, IMG)
     from PIL import Image
     im = Image.open(path).convert("L").resize((IMG, IMG))
     return np.array(im, dtype=np.uint8)
@@ -46,9 +49,18 @@ def run(img):
     np.savetxt(f"{HEX_DIR}/image.hex", img.reshape(-1), fmt="%02x")
     save_png(img, f"{PNG_DIR}/image.png")
     for name, k in KERNELS.items():
+        # coefficients in write_addr order (row-major), two's complement
+        with open(f"{HEX_DIR}/{name}_coef.hex", "w") as f:
+            for row in k:
+                for c in row:
+                    f.write(f"{c & 0xff:02x}\n")
         out = conv(img, k)
         with open(f"{HEX_DIR}/{name}_out.hex", "w") as f:
             for v in out.reshape(-1):
+                f.write(f"{int(v) & 0xffff:04x}\n")
+        relu = conv(img, k, relu=True)
+        with open(f"{HEX_DIR}/{name}_relu_out.hex", "w") as f:
+            for v in relu.reshape(-1):
                 f.write(f"{int(v) & 0xffff:04x}\n")
         save_png(out, f"{PNG_DIR}/{name}.png")
         print(f"{name}: acc range [{out.min()}, {out.max()}]")
@@ -56,6 +68,8 @@ def run(img):
 
 if __name__ == "__main__":
     import sys
+    # python golden.py cat.png        new image
+    # python golden.py hex/image.hex  regenerate outputs for the image already in hex/
     if len(sys.argv) > 1:
         img = load_image(sys.argv[1])
     else:

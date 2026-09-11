@@ -16,7 +16,7 @@ module coeff_reg (
 logic [COEF_W-1:0] coef_reg [0:NTAP-1];
 
 
-always_ff @(posedge clk or negedge rst_n) begin
+always_ff @(posedge clk) begin
     if (!rst_n) begin
         for (int i=0; i<NTAP; i++) begin
             coef_reg[i] <= '0;

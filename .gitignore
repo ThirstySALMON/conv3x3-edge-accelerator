@@ -1,5 +1,23 @@
+# modelsim
 *.mti
 *.mpf
 *.wlf
-/work
-SSCS2026_Gold_Plan.md
+*.vcd
+*.vstf
+transcript
+work/
+sim/work/
+sim/out/
+
+# vivado
+fpga/*.jou
+fpga/*.log
+fpga/.Xil/
+fpga/*.runs/
+fpga/*.cache/
+fpga/*.hw/
+fpga/*.ip_user_files/
+fpga/*.sim/
+
+.DS_Store
+__pycache__/
