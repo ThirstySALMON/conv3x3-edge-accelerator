@@ -25,6 +25,6 @@ rem the rtl has no `timescale (modelsim does not need one) but xsim insists once
 rem module has one, so set the default here instead of touching eight files.
 call xelab --nolog -debug typical --timescale 1ns/1ps tb_top -s tb_top_saif || exit /b 1
 
-call xsim tb_top_saif --nolog --tclbatch fpga\saif_xsim.tcl || exit /b 1
+call xsim tb_top_saif --nolog --runall --tclbatch fpga\saif_xsim.tcl || exit /b 1
 
 if exist fpga\tb_top.saif (echo ok: fpga\tb_top.saif) else (echo saif was not written & exit /b 1)

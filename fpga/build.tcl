@@ -24,11 +24,23 @@ report_utilization    -hierarchical -file $out/utilization_hier.rpt
 report_timing_summary -file $out/timing_summary.rpt
 report_drc            -file $out/drc.rpt
 
+# switching activity. a saif from xsim would be better (report_power says High confidence
+# instead of Low) but xsim is broken on this machine - "Unknown error occured while
+# verifying the digital signature", any design, even a two line $display. so instead the
+# toggle rates are set by hand from what the testbench actually does:
+#   input_in / taps / products - a real image streaming 1 px/cycle, roughly random 8-bit
+#   valid_in, en, win_valid    - high for the whole frame except stalls
+#   write_en, write_addr, data_write - 9 writes at the start of a frame, then idle
 if {[file exists fpga/tb_top.saif]} {
     read_saif fpga/tb_top.saif -strip_path tb_top/dut
     puts "power: using fpga/tb_top.saif"
 } else {
-    puts "power: no saif found, vectorless estimate"
+    puts "power: no saif, setting switching activity by hand"
+    set_switching_activity -default_toggle_rate 40.0 -default_static_probability 0.5         [get_cells -hier -filter {IS_PRIMITIVE && PRIMITIVE_GROUP != IO}]
+    set_switching_activity -toggle_rate 100.0 -static_probability 0.95 [get_nets valid_in]
+    set_switching_activity -toggle_rate 0.1   -static_probability 0.01 [get_nets write_en]
+    set_switching_activity -toggle_rate 0.1   -static_probability 0.5  [get_nets {write_addr[*] data_write[*]}]
+    set_switching_activity -toggle_rate 0.0   -static_probability 1.0  [get_nets rst_n]
 }
 report_power -file $out/power.rpt
 

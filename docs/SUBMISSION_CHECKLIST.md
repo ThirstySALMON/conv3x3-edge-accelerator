@@ -90,8 +90,10 @@ missing information, provided it is stated).
 
 - [ ] Install Vivado ML Standard (free). Device selection: only 7 Series ->
       Zynq-7000 (and Artix-7 if space allows). Skip DocNav + cable drivers.
-- [ ] `fpga\saif.bat` from a Vivado command prompt -> `fpga/tb_top.saif`
-      (real switching activity for the power report; ModelSim ASE cannot do this)
+- [~] SAIF switching activity: **blocked, xsim is broken on this machine**
+      ("Unknown error occured while verifying the digital signature", any
+      design). `fpga/build.tcl` sets toggle rates by hand instead. Retry
+      `fpga\saif.bat` if xsim ever works, it is wired up and ready.
 - [ ] `vivado -mode batch -source fpga/build.tcl` -> `fpga/reports/`.
       Part `xc7z020clg400-1` (PYNQ-Z2), 125 MHz, pins in `fpga/pynq_z2.xdc`,
       `use_dsp="no"` already set, `-max_dsp 0` in the script. Read
@@ -100,9 +102,10 @@ missing information, provided it is stated).
       came out **16, and that is the better result** — Vivado inferred SRL32E
       for both line buffers despite the sync reset (nothing reads the
       intermediate elements), so they cost 16 LUTs instead of 512 FFs.
-- [ ] Power: SAIF-based, not vectorless. Run the TB in xsim, dump SAIF,
-      `read_saif` on the implemented design, then `report_power`. State the
-      method in the report; show static vs dynamic separately.
+- [x] Power: xsim unavailable, so switching activity is set by hand in
+      `build.tcl` from what the TB does. State this method in the report and
+      show static vs dynamic separately. Note 80% of dynamic power is the 42
+      I/O pads, an artifact of exposing a core's ports at the top level.
 - [ ] Sweep the clock constraint (100 -> 150 -> 200 MHz) for real Fmax. Add a
       pipeline stage ONLY if WNS < 0 — FFs are free in the FoM.
 - [ ] Compute FoM
