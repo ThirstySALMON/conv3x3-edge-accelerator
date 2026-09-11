@@ -16,15 +16,11 @@ numbers unlock the report. Do not reorder.
       `FOM = Throughput / (Power x (LUTs + 50*DSPs + 100*BRAMs))`,
       throughput in output pixels per cycle. No power unit is stated in the
       PDF - watts assumed, say so in the report.
-- [ ] **SAIF is mandatory.** Organiser confirmed (11 Sep) the FoM power is
-      total post-implementation power (static + dynamic) and the SAIF must
-      cover active convolution only, excluding reset/idle. Current 0.181 W is
-      vectorless (Low confidence) and does **not** meet this. Blocked on the
-      xsim signature error - see `docs/POWER_METHODOLOGY.md`.
-- [ ] **Ask the organiser which frequency the FoM is computed at** - achieved
-      Fmax or a declared operating frequency. Dynamic power scales with clock
-      while throughput is per-cycle, so a higher Fmax gives a *worse* FoM.
-      We currently report at 125 MHz.
+- [x] **SAIF generated and applied.** 145-10800 ns, active convolution only.
+      Power 0.181 -> 0.158 W, Medium confidence. FoM 7.20e-3. Method, interval
+      and the two benign warnings are written up in `docs/POWER_METHODOLOGY.md`.
+- [x] **FoM frequency: 125 MHz.** Organiser left it to the team. Reasons in
+      `POWER_METHODOLOGY.md`. Fmax 137.8 MHz reported separately under timing.
 
 Every FoM number in the report is untrustworthy until this is confirmed.
 
@@ -55,7 +51,7 @@ The announcement enumerates these; use as the table of contents.
 | # | Section | Status |
 |---|---|---|
 | 1 | Accelerator architecture | drafted |
-| 2 | Block diagram | drafted |
+| 2 | Block diagram | drafted — **needs updating**, list in `docs/BLOCK_DIAGRAM_NOTES.md` |
 | 3 | Datapath | TODO |
 | 4 | FSM state diagram | TODO (diagram drawn, needs write-up) |
 | 5 | Memory organization | drafted |
@@ -93,35 +89,39 @@ missing information, provided it is stated).
       `vsim.wlf` (all gitignored now, the library lives in `sim/work`)
 - [ ] Commit
 
-## 4. Sat 12 Sep — Vivado + freeze
+## 4. Sat 12 Sep — one last pass through the flow, then freeze (revised 11 Sep evening)
 
-- [ ] Install Vivado ML Standard (free). Device selection: only 7 Series ->
-      Zynq-7000 (and Artix-7 if space allows). Skip DocNav + cable drivers.
-- [~] SAIF switching activity: **blocked, xsim is broken on this machine**
-      ("Unknown error occured while verifying the digital signature", any
-      design). `fpga/build.tcl` sets toggle rates by hand instead. Retry
-      `fpga\saif.bat` if xsim ever works, it is wired up and ready.
-- [ ] `vivado -mode batch -source fpga/build.tcl` -> `fpga/reports/`.
-      Part `xc7z020clg400-1` (PYNQ-Z2), 125 MHz, pins in `fpga/pynq_z2.xdc`,
-      `use_dsp="no"` already set, `-max_dsp 0` in the script. Read
-      `fpga/reports/summary.txt` (deliverable #9 is the three .rpt files)
-- [x] **Must-be-zero checks:** DSP = 0 ✓, BRAM = 0 ✓. LUT-as-Shift-Register
-      came out **16, and that is the better result** — Vivado inferred SRL32E
-      for both line buffers despite the sync reset (nothing reads the
-      intermediate elements), so they cost 16 LUTs instead of 512 FFs.
-- [x] Power: xsim unavailable, so switching activity is set by hand in
-      `build.tcl` from what the TB does. State this method in the report and
-      show static vs dynamic separately. Note 80% of dynamic power is the 42
-      I/O pads, an artifact of exposing a core's ports at the top level.
-- [ ] Sweep the clock constraint (100 -> 150 -> 200 MHz) for real Fmax. Add a
-      pipeline stage ONLY if WNS < 0 — FFs are free in the FoM.
-- [ ] Compute FoM
-- [ ] **Tag the commit** (`v1.0-submission`) so every reported number is
-      reproducible from one frozen RTL state
-- [ ] Capture the missing waveforms — stall, edges, drain — with
-      `sim/waves/*.do` (see `WAVEFORM_CAPTURES.md`); retake throughput zoomed in
-- [ ] Render `hw_out/sobel_x_out.hex` to PNG next to the cat (reuse `save_png`
-      from `golden.py`) — satisfies the edge-detection demo bonus in simulation
+The RTL is done. Tomorrow is one clean run of everything on the final RTL, the numbers
+copied into the docs, a tag, and cleanup. Do not open the RTL unless the regression fails.
+
+- [ ] `do sim/compile.do` then `do sim/run.do all` -> 22/22. Last sim before the freeze.
+- [ ] Vivado GUI, in this order:
+      1. One experiment, constraint only: add
+         `set_property DRIVE 4 [get_ports {pixel_out[*] valid_out busy}]`
+         to `fpga/pynq_z2.xdc`, re-implement, `read_saif` + `report_power`. Keep it if
+         total power drops - 4 mA is plenty for a header pin and I/O is 27% of the power.
+      2. Re-implement on the final XDC.
+      3. `read_saif fpga/tb_top.saif -strip_path tb_top/dut`, then utilization,
+         utilization -hierarchical, timing_summary, power, drc into `fpga/reports/`.
+      4. `source fpga/paths.tcl` and keep the printout - per-stage slack for the report.
+- [ ] Check: DSP 0, BRAM 0, LUT-as-SRL 16, WNS >= 0, power confidence Medium.
+- [ ] Copy the final numbers into `fpga/reports/RESULTS.md`, `docs/POWER_METHODOLOGY.md`
+      and Table 1 below. Commit.
+- [ ] `git tag v1.0-submission`
+- [ ] Cleanup: close ModelSim and Vivado, delete root `work/`, `transcript`, `*.vcd`,
+      `vsim.wlf`, `conv.cr.mti`, `xsim.dir/`, `.Xil/`, `*.jou`, `*.log` (all gitignored).
+      `git status` must be clean.
+- [ ] Block diagram + FSM diagram updated per `docs/BLOCK_DIAGRAM_NOTES.md`.
+- [ ] Waveforms: anything still missing from `docs/WAVEFORM_CAPTURES.md`; retake
+      throughput zoomed to ~30 cycles.
+- [ ] Render `hw_out/sobel_x_out.hex` next to the input image as PNGs - the edge-detection
+      bonus, in simulation.
+- [ ] **Only if PYNQ-Z2 is not a hard requirement:** one extra implementation on
+      `xc7a35tcpg236-1` (Basys 3), clock constraint only, for the tradeoffs section.
+      Static power is 68% of the FoM power term and is set by the die, not the RTL; a
+      35T is roughly 0.07 W static against 0.107 W here. Report both if done, submit the
+      one that is defensible. Unconstrained I/O defaults to a different IOSTANDARD, so
+      compare logic + static, not the I/O line.
 
 ## 5. Sun 13 Sep — write the report
 
@@ -160,8 +160,8 @@ missing information, provided it is stated).
 | Verification status | 22/22 regression runs pass: 7 kernels x 1024 px bit-exact vs Python golden (5 real + satmax/satmin covering both saturation branches), fixed + random stalls, 2 frames back to back, ReLU build |
 | FPGA utilization | **879 LUTs** (16 as SRL), **441 FFs**, 0 DSP, 0 BRAM — xc7z020clg400-1 |
 | Maximum frequency | **137.8 MHz** (WNS +0.742 ns at 125 MHz, timing met) — true Fmax needs a tighter constraint |
-| Power estimate | 0.181 W total (0.074 dynamic, 0.107 static) — vectorless, SAIF pending |
-| FOM | **6.285e-3** = 1.0 / (0.181 x 879) — **formula + units still unconfirmed against the PDF** |
+| Power estimate | **0.158 W** total (0.052 dynamic, 0.107 static) at 125 MHz — SAIF-annotated, Medium confidence |
+| FOM | **7.20e-3** = 1.0 / (0.158 x 879) — formula confirmed against the PDF, watts assumed |
 
 Remaining rows (FPGA utilization, max frequency, power estimate, FOM) come
 from §4.

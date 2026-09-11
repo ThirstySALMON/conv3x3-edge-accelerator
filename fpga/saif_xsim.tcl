@@ -13,10 +13,9 @@ set T_END   10800
 
 run ${T_START} ns
 open_saif fpga/tb_top.saif
-log_saif [get_objects /tb_top/dut/*]
-log_saif [get_objects /tb_top/dut/u_wg/*]
-log_saif [get_objects /tb_top/dut/u_cu/*]
-log_saif [get_objects /tb_top/dut/u_cr/*]
+# recursive: non-recursive only annotated 19% of design nets and report_power fell back
+# to probabilistic estimation for the rest. the whole run takes ~70s, so log everything.
+log_saif [get_objects -r /tb_top/dut/*]
 run [expr {$T_END - $T_START}] ns
 close_saif
 puts "saif interval: ${T_START} ns to ${T_END} ns, active convolution only"

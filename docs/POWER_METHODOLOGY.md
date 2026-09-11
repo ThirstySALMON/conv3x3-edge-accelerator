@@ -17,10 +17,11 @@ natural reading and is what is used below. **State the unit assumption in the re
 | item | value |
 |---|---|
 | FPGA device and board | xc7z020clg400-1, PYNQ-Z2 (TUL), Zynq-7000, speed grade -1 |
-| Operating frequency used in the FoM | 125 MHz (the constrained frequency, see note) |
+| Operating frequency used in the FoM | **125 MHz** (decided 11 Sep, see note) |
 | Static power | 0.107 W |
-| Dynamic power | 0.074 W |
-| Total power | 0.181 W |
+| Dynamic power | 0.052 W |
+| Total power | **0.158 W** |
+| Power confidence | Medium, SAIF-annotated (was Low / vectorless at 0.181 W) |
 | Simulation interval used for the SAIF | 145 ns to 10800 ns of tb_top (see below) |
 | Implementation tool | Vivado 2025.2 |
 | Power analysis tool | Vivado report_power |
@@ -36,9 +37,10 @@ makes it worse, with nothing gained. The design closes at 125 MHz with WNS +0.74
 - **FoM is computed at 125 MHz**, the constrained and reported operating frequency.
 - Fmax 137.8 MHz is reported separately, under timing closure, not folded into the FoM.
 
-Worth confirming with the organiser whether they expect the FoM at the achieved Fmax or at
-a declared operating frequency - the two give different numbers and the question has been
-raised in the group.
+The organiser was asked and left the choice to the team. **125 MHz it is**, for three
+reasons: it is the constraint the design was implemented and verified against; the SAIF
+came from the same clock, so power and frequency are self-consistent; and going lower
+than the board clock would read as gaming the metric.
 
 ## SAIF interval
 
@@ -59,29 +61,45 @@ the organiser said to exclude.
 Scope logged: everything under `/tb_top/dut` - the datapath, window_gen, control_fsm and
 coeff_reg.
 
-## Status: SAIF not yet generated
+## SAIF: generated, annotated, result
 
-xsim fails on this machine before running any design:
+`fpga\saif.bat` (xsim, after the signature error was cleared by running elevated) writes
+`fpga/tb_top.saif`: 145-10800 ns, DURATION 10,655,000 ps, 2380 nets under /tb_top/dut,
+logged recursively. Read into the routed design with
 
-    Unknown error occured while verifying the digital signature. Error Code: -2146869232
+    read_saif fpga/tb_top.saif -strip_path tb_top/dut
+    report_power
 
-This is not project-specific - a two-line $display testbench fails identically, and so does
-`vivado -mode batch`, including the GUI's own synth_1 run (which spawns a batch child).
-`vcd2saif` is not shipped in Vivado 2025.2, so VCD conversion is not available as a
-fallback either.
+| | vectorless | SAIF |
+|---|---|---|
+| dynamic | 0.074 W | **0.052 W** (-30%) |
+| static | 0.107 W | 0.107 W |
+| total | 0.181 W | **0.158 W** (-13%) |
+| confidence | Low | **Medium** |
+| FoM | 6.285e-3 | **7.20e-3** (+14.6%) |
 
-**The 0.181 W above is therefore vectorless** (`Confidence Level: Low`), from Vivado's
-default 12.5% toggle assumption, and does not yet meet the organiser's requirement.
+**Why only Medium, and why 19% of nets annotated.** `Design nets matched = 414 of 2229`.
+The SAIF carries RTL names (prod_r, tap_out, row_sum); the routed netlist is mostly
+synthesis-invented names like prod_r_reg[8][11]_i_1_n_0 - internal LUT-to-LUT nets that
+never existed in RTL, so no RTL simulation can annotate them. Logging recursively doubled
+the SAIF (1087 -> 2380 nets) and changed the match count by exactly zero, which confirms
+this is a naming ceiling and not a coverage problem. The 414 that do match are the
+boundary and register nets - I/O, taps, products, accumulator, pipeline registers - which
+are the high-activity nets that set the power; Vivado propagates probabilistically through
+the combinational nets between them, which is what it is designed to do. That dynamic
+power moved by 30% shows the annotation took.
 
-To fix, in order of likelihood: run as Administrator; Internet Options > Advanced >
-uncheck "Check for publisher's certificate revocation"; exclude C:\AMDDesignTools from
-antivirus. Once xsim runs, `fpga\saif.bat` writes the SAIF and `fpga/build.tcl` reads it
-automatically - re-run implementation and report_power, and confidence should rise to
-High.
+High confidence would need a post-implementation timing simulation with a netlist-level
+testbench, which the organiser did not ask for.
 
-If it cannot be fixed before submission, report the vectorless number **and say so
-plainly**, with the toggle assumption stated. A stated methodology limitation is
-defensible; an unsupported number is not.
+**Two warnings from read_saif, both benign, will reappear on every run:**
+- "Simulation is not consistent with clock constraints on net clk" - Vivado ignores SAIF
+  clock activity and uses create_clock instead. The TB clock is 10 ns, the constraint
+  8 ns; the constraint wins, which is what we want.
+- "high-fanout reset nets asserted for excessive periods" - false positive. In the SAIF,
+  rst_n is high (deasserted) for the whole window with zero toggles, i.e. reset was
+  released before capture began. The heuristic guesses the wrong polarity for a constant
+  high-fanout net.
 
 ## Note on the I/O share of dynamic power
 

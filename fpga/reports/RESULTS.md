@@ -117,9 +117,14 @@ saturation). See docs/DESIGN_ITERATIONS.md for the reasoning.
 | DSP / BRAM | 0 / 0 | **0 / 0** |
 | WNS at 8 ns | +0.332 ns | **+0.742 ns** |
 | Fmax | 130.4 MHz | **137.8 MHz** |
-| power | 0.181 W | 0.181 W (vectorless, Low confidence) |
-| FoM | 6.264e-3 | **6.285e-3** |
+| power | 0.181 W vectorless | **0.158 W, SAIF-annotated, Medium confidence** |
+| FoM | 6.264e-3 | **7.20e-3** |
 
-**These are the numbers for the report.** 137.8 MHz is what the design closes at with a
-125 MHz constraint; the true Fmax is higher and needs a tighter create_clock to find.
-Worth one more run before freezing - it is a free number for the "maximum frequency" row.
+**These are the numbers for the report**, at 125 MHz (decided, see
+docs/POWER_METHODOLOGY.md). 137.8 MHz is reported separately under timing closure and is
+deliberately NOT the FoM frequency: dynamic power scales with clock and throughput is per
+cycle, so a higher clock only makes the FoM worse.
+
+Power split that matters for the tradeoffs section: static 0.107 W (68%), I/O pads
+0.042 W (27%), the logic + signals + clocks of the design itself ~0.009 W (6%). The RTL
+is a small part of the power term; the device and the 42 pads are the rest.

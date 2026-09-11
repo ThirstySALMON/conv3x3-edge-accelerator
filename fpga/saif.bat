@@ -26,6 +26,7 @@ rem module has one, so set the default here instead of touching eight files.
 call xelab --nolog -debug typical --timescale 1ns/1ps tb_top -s tb_top_saif || exit /b 1
 
 rem no --runall: the tcl script drives the run itself so it can window the saif
-call xsim tb_top_saif --nolog --tclbatch fpga\saif_xsim.tcl || exit /b 1
+rem forward slashes: xsim passes the path through tcl, which eats the backslash
+call xsim tb_top_saif --nolog --tclbatch fpga/saif_xsim.tcl || exit /b 1
 
 if exist fpga\tb_top.saif (echo ok: fpga\tb_top.saif) else (echo saif was not written & exit /b 1)

@@ -117,6 +117,27 @@ that the saturation logic had never been exercised is not.
 
 ---
 
+## 4. Power from a SAIF instead of the vectorless guess
+
+**Why.** The organiser confirmed (11 Sep) the FoM power term must be total
+post-implementation power with the switching activity from a SAIF covering active
+convolution only. The 0.181 W in the baseline was the Vivado default 12.5% toggle
+assumption, Low confidence.
+
+**What.** tb_top rerun in xsim with SAIF capture windowed to 145-10800 ns - first pixel in
+to last pixel out, 1332 cycles, reset and coefficient load excluded. Read into the routed
+design and report_power rerun. Details and the two benign warnings are in
+docs/POWER_METHODOLOGY.md.
+
+**Result.** Dynamic 0.074 -> 0.052 W, total 0.181 -> **0.158 W**, confidence Low ->
+Medium. FoM 6.285e-3 -> **7.20e-3, +14.6%**, with no change to the RTL at all. The
+largest single FoM gain in the project came from measuring properly, not from design.
+
+**What it also showed.** Of the 0.158 W, static is 0.107 (68%) and I/O pads are 0.042
+(27%). The logic of the design itself is about 0.009 W - 6% of the power term. Every RTL
+optimisation above moved that 6%. The remaining levers are the device (static power is a
+property of the die) and the I/O standard / drive strength on the 42 pads.
+
 ## Status
 
 Re-implemented 11 Sep 18:06, routed, xc7z020clg400-1.
@@ -130,8 +151,8 @@ Re-implemented 11 Sep 18:06, routed, xc7z020clg400-1.
 | DSP / BRAM | 0 / 0 | **0 / 0** | |
 | WNS at 8 ns | +0.332 ns | **+0.742 ns** | **+0.410 ns** |
 | Fmax | 130.4 MHz | **137.8 MHz** | **+5.6%** |
-| power | 0.181 W | 0.181 W | unchanged, still vectorless/Low confidence |
-| FoM | 6.264e-3 | **6.285e-3** | +0.34% |
+| power | 0.181 W vectorless | **0.158 W SAIF** | -13%, Medium confidence |
+| FoM | 6.264e-3 | **7.20e-3** | **+14.9%** overall, almost all from the SAIF |
 
 The two changes bought timing, not area, which is what was predicted: LUT count is flat
 (-3) because the logic moved rather than shrank, and the FoM barely shifts because power
