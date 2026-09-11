@@ -119,19 +119,58 @@ that the saturation logic had never been exercised is not.
 
 ## Status
 
-| | baseline | after 2 + 3 |
-|---|---|---|
-| regression | 16/16 | **22/22** (saturation now covered) |
-| LUTs | 882 | to be re-measured |
-| FFs | 437 | ~441 |
-| WNS at 8 ns | +0.332 ns | to be re-measured |
-| Fmax | 130.4 MHz | to be re-measured |
-| FoM | 6.27e-3 | to be re-measured |
+Re-implemented 11 Sep 18:06, routed, xc7z020clg400-1.
 
-Re-implementation has to be done in the Vivado GUI: batch mode fails on this machine with
-"Unknown error occured while verifying the digital signature. Error Code: -2146869232",
-on any design including a two-line $display, so it is the install and not the project.
+| | baseline | after 2 + 3 | |
+|---|---|---|---|
+| regression | 16/16 | **22/22** | saturation branches now covered |
+| LUTs | 882 | **879** | -3 |
+| FFs | 437 | 441 | +4, the registered edge flags |
+| LUT as shift reg | 16 | 16 | line buffers, unchanged |
+| DSP / BRAM | 0 / 0 | **0 / 0** | |
+| WNS at 8 ns | +0.332 ns | **+0.742 ns** | **+0.410 ns** |
+| Fmax | 130.4 MHz | **137.8 MHz** | **+5.6%** |
+| power | 0.181 W | 0.181 W | unchanged, still vectorless/Low confidence |
+| FoM | 6.264e-3 | **6.285e-3** | +0.34% |
 
-`fpga/paths.tcl` reports the worst paths per pipeline stage rather than only the global
-worst, which is what should be run after re-implementing to see whether the bottleneck
-has moved from stage 1 to stage 3 or stayed put.
+The two changes bought timing, not area, which is what was predicted: LUT count is flat
+(-3) because the logic moved rather than shrank, and the FoM barely shifts because power
+and LUTs both stayed put. The 5.6% Fmax gain is the real result, and it goes to the
+"timing closure" criterion rather than the FoM.
+
+### The critical path moved, but only within stage 1
+
+    baseline:  out_c_reg[4] -> right_edge -> tap mux -> multiplier -> prod_r[8][13]
+               8 levels, 7.633 ns, 62% routing
+    now:       bottom_edge_reg -> tap mux -> multiplier -> prod_r[8][13]
+               7 levels, 7.297 ns, 59% routing
+
+The comparator is gone from the path - it now starts at the *registered* flag - but the
+destination is still `prod_r`, so stage 1 (the multipliers) remains the binding stage.
+Note `bottom_edge` has fanout 156 and spends 1.517 ns on the net into window_gen: the
+flag is registered but it still drives 24 tap muxes across the die, and that routing is
+now the largest single term in the path.
+
+Stage 3 (the saturate stage) did not become the new bottleneck. Whether it is close
+behind is still unmeasured - `report_timing_summary` only prints the global worst path.
+`fpga/paths.tcl` reports the worst paths per stage and should be sourced in the GUI on
+the routed design to settle it.
+
+### Where the LUTs sit now
+
+| block | baseline | now | |
+|---|---|---|---|
+| 9 x mult8x8 | 485 | 496 | +11 |
+| control_fsm | 165 | **80** | **-85**, the edge comparators left |
+| coeff_reg | 96 | 120 | +24 |
+| window_gen | 96 | 132 | +36, 116 logic + 16 SRL |
+| top glue | 89 | 90 | +1 |
+
+control_fsm more than halved, but the work reappeared in window_gen and the multipliers -
+Vivado combines LUTs across the hierarchy boundary (the report says so in a footnote), so
+these per-block numbers move around between runs without the total changing. The total
+went 882 -> 879. Read the per-block split as indicative, not exact.
+
+The batch flow still fails on this machine ("Unknown error occured while verifying the
+digital signature. Error Code: -2146869232") - including the GUI's own synth_1 run, which
+spawns a batch child. These numbers came from running the flow in the GUI Tcl console.

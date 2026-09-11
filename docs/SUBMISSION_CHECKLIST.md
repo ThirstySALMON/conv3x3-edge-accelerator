@@ -151,10 +151,10 @@ missing information, provided it is stated).
 | Latency | 37 cycles (34 fill + 3 pipeline) |
 | Throughput | 1.0 px/cycle peak; ~0.965 sustained per frame |
 | Verification status | 22/22 regression runs pass: 7 kernels x 1024 px bit-exact vs Python golden (5 real + satmax/satmin covering both saturation branches), fixed + random stalls, 2 frames back to back, ReLU build |
-| FPGA utilization | 882 LUTs (16 as SRL), 437 FFs, 0 DSP, 0 BRAM — xc7z020clg400-1 |
-| Maximum frequency | 130.4 MHz (WNS +0.332 ns at 125 MHz, timing met) |
+| FPGA utilization | **879 LUTs** (16 as SRL), **441 FFs**, 0 DSP, 0 BRAM — xc7z020clg400-1 |
+| Maximum frequency | **137.8 MHz** (WNS +0.742 ns at 125 MHz, timing met) — true Fmax needs a tighter constraint |
 | Power estimate | 0.181 W total (0.074 dynamic, 0.107 static) — vectorless, SAIF pending |
-| FOM | 6.27e-3 = 1.0 / (0.181 x 882) — **formula + units still unconfirmed against the PDF** |
+| FOM | **6.285e-3** = 1.0 / (0.181 x 879) — **formula + units still unconfirmed against the PDF** |
 
 Remaining rows (FPGA utilization, max frequency, power estimate, FOM) come
 from §4.

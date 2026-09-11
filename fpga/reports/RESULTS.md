@@ -107,14 +107,19 @@ NOT YET RE-SYNTHESISED - batch vivado does not run on this machine (signature er
 re-run implementation in the GUI and update the table below. Expect WNS to improve by
 roughly 1.5-2 ns; LUT count should be about the same, the logic moved rather than shrank.
 
-| | baseline | with registered edge flags |
-|---|---|---|
-| LUTs | 882 | ? |
-| FFs | 437 | ~441 |
-| WNS at 8 ns | +0.332 ns | ? |
-| Fmax | 130.4 MHz | ? |
-| power | 0.181 W | ? |
-| FoM | 6.27e-3 | ? |
+Re-implemented 11 Sep 18:06. Both changes in (registered edge flags + top-bits
+saturation). See docs/DESIGN_ITERATIONS.md for the reasoning.
 
-If WNS improves a lot, the 125 MHz constraint is no longer the limit - re-run with a
-tighter create_clock to find the real Fmax for the report.
+| | baseline | now |
+|---|---|---|
+| LUTs | 882 | **879** |
+| FFs | 437 | 441 |
+| DSP / BRAM | 0 / 0 | **0 / 0** |
+| WNS at 8 ns | +0.332 ns | **+0.742 ns** |
+| Fmax | 130.4 MHz | **137.8 MHz** |
+| power | 0.181 W | 0.181 W (vectorless, Low confidence) |
+| FoM | 6.264e-3 | **6.285e-3** |
+
+**These are the numbers for the report.** 137.8 MHz is what the design closes at with a
+125 MHz constraint; the true Fmax is higher and needs a tighter create_clock to find.
+Worth one more run before freezing - it is a free number for the "maximum frequency" row.
