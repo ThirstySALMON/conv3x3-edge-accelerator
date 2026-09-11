@@ -25,6 +25,8 @@ module control_fsm (
     logic [$clog2(IMG_H)-1:0]        out_r;
     logic [$clog2(DRAIN_CYCLES)-1:0] drain_cnt;
     logic                            consume, out_adv, last_consume;
+    logic [$clog2(IMG_W)-1:0]        nxt_c;
+    logic [$clog2(IMG_H)-1:0]        nxt_r;
 
         always_comb begin
         case (state)
@@ -34,10 +36,20 @@ module control_fsm (
         endcase
     end
 
-    assign top_edge    = (out_r == 0);
-    assign bottom_edge = (out_r == IMG_H-1);
-    assign left_edge   = (out_c == 0);
-    assign right_edge  = (out_c == IMG_W-1);
+    // next output position, so the edge flags can be registered instead of falling out
+    // of a comparator into the tap muxes and the multipliers in the same cycle.
+    always_comb begin
+        nxt_c = out_c;
+        nxt_r = out_r;
+        if (out_adv) begin
+            if (out_c == IMG_W-1) begin
+                nxt_c = '0;
+                nxt_r = (out_r == IMG_H-1) ? '0 : out_r + 1;
+            end else begin
+                nxt_c = out_c + 1;
+            end
+        end
+    end
 
     assign consume = en && (state != S_DRAIN);
     assign out_adv = en && (state == S_STREAM || state == S_DRAIN);
@@ -70,20 +82,23 @@ module control_fsm (
             out_r     <= '0;
             out_c     <= '0;
             drain_cnt <= '0;
+            top_edge    <= 1'b1;      // position (0,0)
+            bottom_edge <= 1'b0;
+            left_edge   <= 1'b1;
+            right_edge  <= 1'b0;
         end else begin
             state <= next;
 
             if (consume)
                 in_cnt <= (in_cnt == NPIX-1) ? '0 : in_cnt + 1;
 
-            if (out_adv) begin
-                if (out_c == IMG_W-1) begin
-                    out_c <= '0;
-                    out_r <= (out_r == IMG_H-1) ? '0 : out_r + 1;
-                end else begin
-                    out_c <= out_c + 1;
-                end
-            end
+            out_c <= nxt_c;
+            out_r <= nxt_r;
+
+            top_edge    <= (nxt_r == 0);
+            bottom_edge <= (nxt_r == IMG_H-1);
+            left_edge   <= (nxt_c == 0);
+            right_edge  <= (nxt_c == IMG_W-1);
 
             drain_cnt <= (state == S_DRAIN) ? (drain_cnt + 1) : '0;
         end

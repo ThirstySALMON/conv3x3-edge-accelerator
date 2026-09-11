@@ -51,3 +51,70 @@ The 0.181 W above is vectorless (Vivado assumes 12.5% toggle). Note io is 0.059 
 on a core that would normally sit inside a larger design. `fpga/saif.bat` reruns tb_top in
 xsim and writes real switching activity; build.tcl picks it up and report_power then says
 High confidence.
+
+## Where the LUTs went (from utilization_hier.rpt, baseline build)
+
+| block | LUTs | % | note |
+|---|---|---|---|
+| 9 x mult8x8 | 485 | 54% | irreducible while coefficients stay programmable |
+| control_fsm | 165 | 19% | too big for 5 states + 3 counters, see below |
+| coeff_reg | 96 | 11% | write-address decoder, 9x8 storage is only 72 FFs |
+| window_gen | 96 | 11% | 80 logic + 16 SRL (the two line buffers) |
+| top glue | 89 | 10% | adder tree, saturate, relu mux |
+| total | 890 | | 882 in the flat report, the hierarchy double-counts boundary LUTs |
+
+### control_fsm: in_cnt is NOT removable (tried it, it breaks)
+
+It looks like `in_cnt` (10 bits, only used for `last_consume = consume && in_cnt ==
+NPIX-1`) duplicates out_r/out_c, and that the STREAM exit could reuse bottom_edge &&
+right_edge instead. It cannot. `consume` is asserted during FILL as well as STREAM, so
+the input count leads the output position by exactly FILL_CYCLES: at the last consumed
+pixel the output position is (30, 29), not a corner. Making that substitution runs the
+frame to 1059 consumed / 1058 out instead of 1024 / 1024.
+
+Expressing it as `out_r == 30 && out_c == 29` would work but trades one 10-bit compare
+for two 5-bit compares and silently breaks if FILL_CYCLES ever changes. Not worth it.
+
+So the 165 LUTs are not a redundant counter. They are the four edge comparators plus the
+en / consume / out_adv fanout, and a one-hot state register that Vivado replicated
+(`FSM_onehot_state_reg[0]_replica` appears in the critical path). The comparators are
+real work: each drives 24 tap zero-muxes in window_gen.
+
+### coeff_reg at 96 LUTs
+
+9 registers of 8 bits is 72 FFs and should be almost no LUTs. The 96 are the 4-bit
+write-address decoder fanning out to 9 byte-wide enables. Could be narrowed (3-bit addr,
+or a shift-in chain instead of addressed writes) but the write port shape is part of the
+documented interface, so it was left alone.
+
+## Change: edge flags registered (needs re-measuring in the GUI)
+
+Vivado's own critical path was
+
+    out_c_reg[4] -> right_edge -> tap zero mux -> multiplier -> prod_r[8][13]
+    8 levels, 7.633 ns, 62% routing
+
+ie. the column counter, the edge comparator, the tap masking and the multiply all in one
+cycle. The four edge flags are now registered in control_fsm, computed from the *next*
+output position (nxt_r / nxt_c) so they are valid on the cycle they are used. That takes
+the comparator and its fanout out of the multiplier path for free - 4 FFs, no extra LUTs,
+no change to latency or to the interface.
+
+Verified: `do sim/run.do all` 16/16, and tb_top_window reports 0 position/edge errors
+against the golden raster positions for all 1024 windows.
+
+NOT YET RE-SYNTHESISED - batch vivado does not run on this machine (signature error), so
+re-run implementation in the GUI and update the table below. Expect WNS to improve by
+roughly 1.5-2 ns; LUT count should be about the same, the logic moved rather than shrank.
+
+| | baseline | with registered edge flags |
+|---|---|---|
+| LUTs | 882 | ? |
+| FFs | 437 | ~441 |
+| WNS at 8 ns | +0.332 ns | ? |
+| Fmax | 130.4 MHz | ? |
+| power | 0.181 W | ? |
+| FoM | 6.27e-3 | ? |
+
+If WNS improves a lot, the 125 MHz constraint is no longer the limit - re-run with a
+tighter create_clock to find the real Fmax for the report.
