@@ -12,12 +12,19 @@ numbers unlock the report. Do not reorder.
 
 ## 0. Blocking check — do this first
 
-- [ ] **Recover the FoM formula from the original PDF.** The Markdown
-      conversion of the announcement dropped it: line 40 reads "report the
-      following Figure of Merit:" followed by nothing. Confirm the formula AND
-      the power units (mW vs W shifts the result by 1000x). Our docs assume:
+- [x] **FoM formula confirmed** against the PDF (11 Sep):
       `FOM = Throughput / (Power x (LUTs + 50*DSPs + 100*BRAMs))`,
-      throughput in output pixels per cycle.
+      throughput in output pixels per cycle. No power unit is stated in the
+      PDF - watts assumed, say so in the report.
+- [ ] **SAIF is mandatory.** Organiser confirmed (11 Sep) the FoM power is
+      total post-implementation power (static + dynamic) and the SAIF must
+      cover active convolution only, excluding reset/idle. Current 0.181 W is
+      vectorless (Low confidence) and does **not** meet this. Blocked on the
+      xsim signature error - see `docs/POWER_METHODOLOGY.md`.
+- [ ] **Ask the organiser which frequency the FoM is computed at** - achieved
+      Fmax or a declared operating frequency. Dynamic power scales with clock
+      while throughput is per-cycle, so a higher Fmax gives a *worse* FoM.
+      We currently report at 125 MHz.
 
 Every FoM number in the report is untrustworthy until this is confirmed.
 
