@@ -135,10 +135,21 @@ module top #(
     // ---------------- final adder, saturate, relu -> stage 3 ----------------
     assign acc = row_r[0] + row_r[1] + row_r[2];
 
+    // Saturation by sign-extension check rather than two 20-bit magnitude compares.
+    // acc fits in OUT_W signed exactly when the upper bits are all copies of bit
+    // OUT_W-1, so testing acc[ACC_W-1:OUT_W-1] for all-ones / all-zeros is the same
+    // answer for every value of acc, in 2 LUTs instead of two carry chains.
+    // Verified exhaustively over all 2^20 accumulator values.
+    logic [ACC_W-OUT_W:0] acc_top;       // acc[19:15], 5 bits
+    logic                 fits;
+
+    assign acc_top = acc[ACC_W-1 -: (ACC_W-OUT_W+1)];
+    assign fits    = (acc_top == '0) || (acc_top == '1);
+
     always_comb begin
-        if      (acc > OUT_MAX) sat = OUT_MAX[OUT_W-1:0];
-        else if (acc < OUT_MIN) sat = OUT_MIN[OUT_W-1:0];
-        else                    sat = acc[OUT_W-1:0];
+        if (fits)            sat = acc[OUT_W-1:0];
+        else if (acc[ACC_W-1]) sat = OUT_MIN[OUT_W-1:0];   // negative -> -32768
+        else                   sat = OUT_MAX[OUT_W-1:0];   // positive -> +32767
     end
 
     assign relu_out = (RELU && sat[OUT_W-1]) ? '0 : sat;   // clip negatives

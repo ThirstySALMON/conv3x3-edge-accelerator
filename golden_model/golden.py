@@ -10,6 +10,10 @@ KERNELS = {
     "sobel_y":   [[-1,-2,-1],[0,0,0],[1,2,1]],
     "sharpen":   [[0,-1,0],[-1,5,-1],[0,-1,0]],
     "laplacian": [[0,1,0],[1,-4,1],[0,1,0]],
+    # not a real filter - drives the accumulator past +/-32767 so the RTL
+    # saturation branches actually get exercised against the model
+    "satmax":    [[127,127,127],[127,127,127],[127,127,127]],
+    "satmin":    [[-128,-128,-128],[-128,-128,-128],[-128,-128,-128]],
 }
 
 def conv(img, k, relu=False):

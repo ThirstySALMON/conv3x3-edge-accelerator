@@ -9,7 +9,10 @@ import cnn_pkg::*;
 module tb_top_all;
 
 localparam string HEX = "golden_model/hex/";
-string KERNELS [5] = '{"identity", "sobel_x", "sobel_y", "sharpen", "laplacian"};
+// satmax/satmin are not real filters, they push the accumulator past +/-32767 so the
+// saturation branches get exercised instead of only being argued about on paper.
+string KERNELS [7] = '{"identity", "sobel_x", "sobel_y", "sharpen", "laplacian",
+                       "satmax", "satmin"};
 
 logic clk = 0, rst_n = 0;
 logic [IN_W-1:0]    input_in;

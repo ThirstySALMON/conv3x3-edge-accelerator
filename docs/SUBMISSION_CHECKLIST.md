@@ -59,7 +59,7 @@ The announcement enumerates these; use as the table of contents.
 | 10 | Golden model | TODO |
 | 11 | Waveform screenshots | PARTIAL — 8 in `docs/waveforms/`, need stall / edges / drain (see `WAVEFORM_CAPTURES.md`) |
 | 12 | FPGA synth results + timing report + power report | TODO |
-| 13 | Design tradeoffs discussion | TODO |
+| 13 | Design tradeoffs discussion | TODO — source material in `docs/DESIGN_ITERATIONS.md` (profiling, the rejected in_cnt change, registered edge flags, saturation rework, why constant-coefficient multipliers were rejected) |
 
 Plus: **Table 1** in the required format (every row, with units), and an
 **assumptions** section (announcement instruction 4 explicitly allows assuming
@@ -150,7 +150,7 @@ missing information, provided it is stated).
 | Pipeline stages | Window (2x32 line buffers + 3x3 taps) + 3 register stages (products, row sums, output) |
 | Latency | 37 cycles (34 fill + 3 pipeline) |
 | Throughput | 1.0 px/cycle peak; ~0.965 sustained per frame |
-| Verification status | 16/16 regression runs pass: 5 kernels x 1024 px bit-exact vs Python golden, fixed + random stalls, 2 frames back to back, ReLU build |
+| Verification status | 22/22 regression runs pass: 7 kernels x 1024 px bit-exact vs Python golden (5 real + satmax/satmin covering both saturation branches), fixed + random stalls, 2 frames back to back, ReLU build |
 | FPGA utilization | 882 LUTs (16 as SRL), 437 FFs, 0 DSP, 0 BRAM — xc7z020clg400-1 |
 | Maximum frequency | 130.4 MHz (WNS +0.332 ns at 125 MHz, timing met) |
 | Power estimate | 0.181 W total (0.074 dynamic, 0.107 static) — vectorless, SAIF pending |
