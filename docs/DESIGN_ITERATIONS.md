@@ -151,10 +151,38 @@ Note `bottom_edge` has fanout 156 and spends 1.517 ns on the net into window_gen
 flag is registered but it still drives 24 tap muxes across the die, and that routing is
 now the largest single term in the path.
 
-Stage 3 (the saturate stage) did not become the new bottleneck. Whether it is close
-behind is still unmeasured - `report_timing_summary` only prints the global worst path.
-`fpga/paths.tcl` reports the worst paths per stage and should be sourced in the GUI on
-the routed design to settle it.
+### Per-stage slack, measured (fpga/paths.tcl on the routed design)
+
+| stage | worst slack | headroom over stage 1 |
+|---|---|---|
+| 1: window/coeffs -> prod_r (9 multipliers) | **+0.742 ns** | - |
+| 3: row_r -> pixel_out (add + saturate + relu) | +2.666 ns | 1.92 ns |
+| 2: prod_r -> row_r (3 row adders) | +3.799 ns | 3.06 ns |
+
+So the saturate stage was never the constraint - it has nearly 2 ns spare. The top-bits
+rewrite in section 3 bought no timing at all. It is kept because it is 2 LUTs cheaper,
+proven equivalent over the full input range, and because writing it is what exposed that
+the saturation branches had never been exercised.
+
+### Every one of the 15 worst paths starts at an edge flag
+
+    bottom_edge_reg -> prod_r[8][*]    9 of the top 15
+    top_edge_reg    -> prod_r[2][*]    4
+    right_edge_reg  -> prod_r[5][13]   1
+
+None start at coeff_reg or at the tap registers. The binding constraint is not the
+multiplier logic, it is when the edge flags arrive at the multipliers. The endpoints are
+taps i, c and f - the corner/edge taps masked by two flags at once, so they carry the most
+mask logic ahead of the multiply.
+
+Registering the flags removed the comparator from the path; what is left is fanout.
+`bottom_edge` drives 156 loads and 1.517 ns of the 7.297 ns path is that one net. The next
+step, if timing ever needs it, is replicating the edge-flag registers per tap row
+(`max_fanout` attribute, or explicit duplicates with dont_touch) so each copy drives ~24
+loads instead of 156 - about 8 FFs, free in the FoM, maybe 0.5-1 ns.
+
+Not done: timing already closes, Fmax is not in the FoM, and the gain is routing-dependent
+rather than structural. Recorded as identified-and-quantified.
 
 ### Where the LUTs sit now
 
