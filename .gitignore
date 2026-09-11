@@ -9,15 +9,21 @@ work/
 sim/work/
 sim/out/
 
-# vivado
-fpga/*.jou
-fpga/*.log
-fpga/.Xil/
+# vivado / xsim, they litter wherever they are run from
+*.jou
+*.log
+*.pb
+*.wdb
+*.str
+xsim.dir/
+.Xil/
 fpga/*.runs/
 fpga/*.cache/
 fpga/*.hw/
 fpga/*.ip_user_files/
 fpga/*.sim/
+fpga/reports/*.dcp
+fpga/tb_top.saif
 
 .DS_Store
 __pycache__/

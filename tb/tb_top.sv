@@ -19,13 +19,12 @@ logic [3:0]         write_addr = 0;
 logic [7:0]         data_write = 0;
 logic signed [15:0] pixel_out;
 logic               valid_out, busy;
-logic [IN_W-1:0]    taps [0:NTAP-1]; // comment out , for debug
 
 top dut (
     .clk(clk), .rst_n(rst_n),
     .input_in(input_in), .valid_in(valid_in),
     .write_en(write_en), .write_addr(write_addr), .data_write(data_write),
-    .pixel_out(pixel_out), .valid_out(valid_out), .busy(busy), .taps(taps) // comment out , for debug
+    .pixel_out(pixel_out), .valid_out(valid_out), .busy(busy)
 );
 
 always #5 clk = ~clk;

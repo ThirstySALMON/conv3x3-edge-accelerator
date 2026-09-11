@@ -79,25 +79,27 @@ missing information, provided it is stated).
 - [ ] Confirm the 5 kernel definitions in `golden.py` are the intended ones —
       `CLAUDE.md` flags them as assumptions. If any change: rerun
       `python golden.py hex/image.hex` then `do sim/run.do all`
-- [ ] Cleanup: delete the `taps` debug port from `rtl/top.sv` (and the four
-      TB connections); make `rtl/coeff_reg.sv` reset synchronous like every
-      other module; rerun `do sim/run.do all`
+- [x] Cleanup: `taps` debug port removed from `rtl/top.sv` and all TBs;
+      `rtl/coeff_reg.sv` reset is synchronous and `write_addr` is range-guarded;
+      `do sim/run.do all` still 16/16
 - [ ] Close ModelSim, delete the old root `work/`, `transcript`, `*.vcd`,
       `vsim.wlf` (all gitignored now, the library lives in `sim/work`)
 - [ ] Commit
 
 ## 4. Sat 12 Sep — Vivado + freeze
 
-- [ ] Project: `rtl/*.sv` as SystemVerilog, top = `top`, part
-      `xc7a100tcsg324-1` (Arty A7-100T); XDC with
-      `create_clock -period 10.000 [get_ports clk]`
-- [ ] Uncomment `(* use_dsp = "no" *)` in `rtl/multiplier.sv`
-- [ ] Synth + impl; save `report_utilization`, `report_timing_summary`,
-      `report_power` as files (deliverable #9)
-- [ ] **Must-be-zero checks:** DSP = 0, BRAM = 0, **LUT-as-Shift-Register = 0**.
-      If the line buffers infer SRLC32E they count as LUTs in the FoM
-      denominator instead of free FFs. The synchronous reset in `line_buffer`
-      is what blocks SRL inference — keep it.
+- [ ] Install Vivado ML Standard (free). Device selection: only 7 Series ->
+      Zynq-7000 (and Artix-7 if space allows). Skip DocNav + cable drivers.
+- [ ] `fpga\saif.bat` from a Vivado command prompt -> `fpga/tb_top.saif`
+      (real switching activity for the power report; ModelSim ASE cannot do this)
+- [ ] `vivado -mode batch -source fpga/build.tcl` -> `fpga/reports/`.
+      Part `xc7z020clg400-1` (PYNQ-Z2), 125 MHz, pins in `fpga/pynq_z2.xdc`,
+      `use_dsp="no"` already set, `-max_dsp 0` in the script. Read
+      `fpga/reports/summary.txt` (deliverable #9 is the three .rpt files)
+- [x] **Must-be-zero checks:** DSP = 0 ✓, BRAM = 0 ✓. LUT-as-Shift-Register
+      came out **16, and that is the better result** — Vivado inferred SRL32E
+      for both line buffers despite the sync reset (nothing reads the
+      intermediate elements), so they cost 16 LUTs instead of 512 FFs.
 - [ ] Power: SAIF-based, not vectorless. Run the TB in xsim, dump SAIF,
       `read_saif` on the implemented design, then `report_power`. State the
       method in the report; show static vs dynamic separately.
@@ -146,6 +148,10 @@ missing information, provided it is stated).
 | Latency | 37 cycles (34 fill + 3 pipeline) |
 | Throughput | 1.0 px/cycle peak; ~0.965 sustained per frame |
 | Verification status | 16/16 regression runs pass: 5 kernels x 1024 px bit-exact vs Python golden, fixed + random stalls, 2 frames back to back, ReLU build |
+| FPGA utilization | 882 LUTs (16 as SRL), 437 FFs, 0 DSP, 0 BRAM — xc7z020clg400-1 |
+| Maximum frequency | 130.4 MHz (WNS +0.332 ns at 125 MHz, timing met) |
+| Power estimate | 0.181 W total (0.074 dynamic, 0.107 static) — vectorless, SAIF pending |
+| FOM | 6.27e-3 = 1.0 / (0.181 x 882) — **formula + units still unconfirmed against the PDF** |
 
 Remaining rows (FPGA utilization, max frequency, power estimate, FOM) come
 from §4.

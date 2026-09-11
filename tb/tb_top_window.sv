@@ -31,13 +31,12 @@ logic [7:0]       data_write = 8'd0;
 logic [15:0]      pixel_out;            // observed but not checked
 logic             valid_out;            // observed but not checked
 logic             busy;
-logic [IN_W-1:0]  taps [0:NTAP-1];      // comment out , for debug
 
 top dut (
     .clk(clk), .rst_n(rst_n),
     .input_in(input_in), .valid_in(valid_in),
     .write_en(write_en), .write_addr(write_addr), .data_write(data_write),
-    .pixel_out(pixel_out), .valid_out(valid_out), .busy(busy) ,.taps(taps) // comment out , for debug
+    .pixel_out(pixel_out), .valid_out(valid_out), .busy(busy)
 );
 
 localparam real CLK_PERIOD = 10;

@@ -19,18 +19,17 @@ logic [3:0]         write_addr = 0;
 logic [7:0]         data_write = 0;
 logic signed [15:0] pix, pix_r;
 logic               vo, vo_r, busy, busy_r;
-logic [IN_W-1:0]    taps [0:NTAP-1], taps_r [0:NTAP-1];
 
 top dut (
     .clk(clk), .rst_n(rst_n), .input_in(input_in), .valid_in(valid_in),
     .write_en(write_en), .write_addr(write_addr), .data_write(data_write),
-    .pixel_out(pix), .valid_out(vo), .busy(busy), .taps(taps)
+    .pixel_out(pix), .valid_out(vo), .busy(busy)
 );
 
 top #(.RELU(1'b1)) dut_r (   // same thing with relu on
     .clk(clk), .rst_n(rst_n), .input_in(input_in), .valid_in(valid_in),
     .write_en(write_en), .write_addr(write_addr), .data_write(data_write),
-    .pixel_out(pix_r), .valid_out(vo_r), .busy(busy_r), .taps(taps_r)
+    .pixel_out(pix_r), .valid_out(vo_r), .busy(busy_r)
 );
 
 always #5 clk = ~clk;

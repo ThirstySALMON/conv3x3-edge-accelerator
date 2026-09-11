@@ -16,12 +16,12 @@ module coeff_reg (
 logic [COEF_W-1:0] coef_reg [0:NTAP-1];
 
 
-always_ff @(posedge clk) begin
+always_ff @(posedge clk) begin           // synchronous reset, same as every other module
     if (!rst_n) begin
         for (int i=0; i<NTAP; i++) begin
             coef_reg[i] <= '0;
         end
-    end else if (write_en && !busy) begin
+    end else if (write_en && !busy && write_addr < NTAP) begin  // addr is 4 bits, only 0..8 exist
         coef_reg[write_addr] <= data_write;
     end
 end
