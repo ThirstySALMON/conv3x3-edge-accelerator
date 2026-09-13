@@ -70,80 +70,16 @@ missing information, provided it is stated).
 
 ---
 
-## 3. Fri 11 Sep — Gate 2: prove correctness end-to-end
+## 3. Fri 11 Sep - done
 
-- [x] Coefficients through the real write port in IDLE — `tb_top.sv`, `tb_top_all.sv`
-- [x] `pixel_out` diffed against golden for all 5 kernels — 0 mismatches
-- [x] `hw_out/<kernel>_out.hex` written, identical to golden (deliverable #8)
-- [x] Stall injection: fixed set + random ~20%, bubbles == STREAM stalls, `valid_out` == `win_valid` delayed 3 every cycle
-- [x] Two back-to-back frames with a kernel swap while frame 1's tail is still draining — 2048 outputs clean
-- [x] Latency 37 cycles (39 with 2 FILL stalls), 1024 outputs in 1024 cycles — `do sim/run.do sobel_x`
-- [x] ReLU build (`top #(.RELU(1))`) diffed against `_relu_out.hex` on all 5 kernels
-- [ ] Confirm the 5 kernel definitions in `golden.py` are the intended ones —
-      `CLAUDE.md` flags them as assumptions. If any change: rerun
-      `python golden.py hex/image.hex` then `do sim/run.do all`
-- [x] Cleanup: `taps` debug port removed from `rtl/top.sv` and all TBs;
-      `rtl/coeff_reg.sv` reset is synchronous and `write_addr` is range-guarded;
-      `do sim/run.do all` still 16/16
-- [ ] Close ModelSim, delete the old root `work/`, `transcript`, `*.vcd`,
-      `vsim.wlf` (all gitignored now, the library lives in `sim/work`)
-- [ ] Commit
+Gate 2 closed, implemented on xc7z020, SAIF-annotated power, three design iterations,
+all documented. Saturday was lost.
 
-## 4. Sat 12 Sep — one last pass through the flow, then freeze (revised 11 Sep evening)
+## 4-6. Sunday 13 and Monday 14
 
-The RTL is done. Tomorrow is one clean run of everything on the final RTL, the numbers
-copied into the docs, a tag, and cleanup. Do not open the RTL unless the regression fails.
-
-- [ ] `do sim/compile.do` then `do sim/run.do all` -> 22/22. Last sim before the freeze.
-- [ ] Vivado GUI, in this order:
-      1. One experiment, constraint only: add
-         `set_property DRIVE 4 [get_ports {pixel_out[*] valid_out busy}]`
-         to `fpga/pynq_z2.xdc`, re-implement, `read_saif` + `report_power`. Keep it if
-         total power drops - 4 mA is plenty for a header pin and I/O is 27% of the power.
-      2. Re-implement on the final XDC.
-      3. `read_saif fpga/tb_top.saif -strip_path tb_top/dut`, then utilization,
-         utilization -hierarchical, timing_summary, power, drc into `fpga/reports/`.
-      4. `source fpga/paths.tcl` and keep the printout - per-stage slack for the report.
-- [ ] Check: DSP 0, BRAM 0, LUT-as-SRL 16, WNS >= 0, power confidence Medium.
-- [ ] Copy the final numbers into `fpga/reports/RESULTS.md`, `docs/POWER_METHODOLOGY.md`
-      and Table 1 below. Commit.
-- [ ] `git tag v1.0-submission`
-- [ ] Cleanup: close ModelSim and Vivado, delete root `work/`, `transcript`, `*.vcd`,
-      `vsim.wlf`, `conv.cr.mti`, `xsim.dir/`, `.Xil/`, `*.jou`, `*.log` (all gitignored).
-      `git status` must be clean.
-- [ ] Block diagram + FSM diagram updated per `docs/BLOCK_DIAGRAM_NOTES.md`.
-- [ ] Waveforms: anything still missing from `docs/WAVEFORM_CAPTURES.md`; retake
-      throughput zoomed to ~30 cycles.
-- [ ] Render `hw_out/sobel_x_out.hex` next to the input image as PNGs - the edge-detection
-      bonus, in simulation.
-- [ ] **Only if PYNQ-Z2 is not a hard requirement:** one extra implementation on
-      `xc7a35tcpg236-1` (Basys 3), clock constraint only, for the tradeoffs section.
-      Static power is 68% of the FoM power term and is set by the die, not the RTL; a
-      35T is roughly 0.07 W static against 0.107 W here. Report both if done, submit the
-      one that is defensible. Unconstrained I/O defaults to a different IOSTANDARD, so
-      compare logic + static, not the I/O line.
-
-## 5. Sun 13 Sep — write the report
-
-- [ ] Sections 3, 4, 8, 9, 10, 13 (datapath, FSM, RTL details, testbench,
-      golden model, tradeoffs)
-- [ ] Insert waveform screenshots (§11) and the three FPGA reports (§12)
-- [ ] Fill Table 1 completely — every row, with units
-- [ ] Assumptions section: frame-gap handling (no `ready` signal), `busy`
-      falling 3 cycles before the last `valid_out`, kernel choices, power
-      methodology, image size frozen at 32x32
-- [ ] State bonus claims explicitly: 1 px/cycle pipelined, multiple kernels
-      (5 verified, reloadable between frames), ReLU, edge-detection demo
-- [ ] Draft the slide deck (deliverable #2)
-
-## 6. Mon 14 Sep — package and submit
-
-- [ ] Proofread; confirm no `TODO` and no placeholder numbers survive
-- [ ] Package: `rtl/`, `tb/`, `golden_model/`, `vectors/`, `hw_out/`, FPGA
-      reports, report, slides
-- [ ] Submit
-
----
+The step-by-step plan is in **`docs/FINAL_TWO_DAYS.md`** - one clean flow pass, tag,
+cleanup, report drafted and assembled Sunday; slides, proofread, package, submit Monday.
+PYNQ-Z2 is a hard requirement, so no other device gets tried.
 
 ## 7. Table 1 rows fillable before synthesis
 
