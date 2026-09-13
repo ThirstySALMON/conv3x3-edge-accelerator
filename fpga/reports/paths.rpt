@@ -1,0 +1,112 @@
+
+== worst 15 paths, whole design ==
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun Sep 13 20:14:56 2026
+| Host         : DESKTOP-3EUKBLL running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 15 -sort_by slack -path_type summary -return_string
+| Design       : top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+u_cu/bottom_edge_reg/C         prod_r_reg[8][13]/D            0.742         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][15]/D            0.750         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][14]/D            0.826         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][12]/D            0.846         
+u_cu/top_edge_reg/C            prod_r_reg[2][15]/D            0.909         
+u_cu/bottom_edge_reg/C         prod_r_reg[6][13]/D            0.928         
+u_cu/top_edge_reg/C            prod_r_reg[2][13]/D            0.931         
+u_cu/bottom_edge_reg/C         prod_r_reg[6][15]/D            0.949         
+u_cu/top_edge_reg/C            prod_r_reg[2][14]/D            0.968         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][11]/D            0.975         
+u_cu/bottom_edge_reg/C         prod_r_reg[6][14]/D            1.023         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][10]/D            1.038         
+u_cu/bottom_edge_reg/C         prod_r_reg[6][12]/D            1.039         
+u_cu/top_edge_reg/C            prod_r_reg[2][12]/D            1.042         
+u_cu/right_edge_reg/C          prod_r_reg[5][13]/D            1.077         
+
+
+
+
+
+== stage 1: window/coeffs -> prod_r (9 multipliers) ==
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun Sep 13 20:14:56 2026
+| Host         : DESKTOP-3EUKBLL running 64-bit major release  (build 9200)
+| Command      : report_timing -to [get_cells -hier -filter {NAME =~ *prod_r_reg*}] -max_paths 3 -path_type summary -return_string
+| Design       : top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+u_cu/bottom_edge_reg/C         prod_r_reg[8][13]/D            0.742         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][15]/D            0.750         
+u_cu/bottom_edge_reg/C         prod_r_reg[8][14]/D            0.826         
+
+
+
+
+
+== stage 2: prod_r -> row_r (3 row adders) ==
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun Sep 13 20:14:56 2026
+| Host         : DESKTOP-3EUKBLL running 64-bit major release  (build 9200)
+| Command      : report_timing -to [get_cells -hier -filter {NAME =~ *row_r_reg*}] -max_paths 3 -path_type summary -return_string
+| Design       : top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+prod_r_reg[0][2]/C             row_r_reg[0][17]/D             3.799         
+prod_r_reg[0][2]/C             row_r_reg[0][16]/D             3.903         
+prod_r_reg[0][2]/C             row_r_reg[0][13]/D             3.918         
+
+
+
+
+
+== stage 3: row_r -> pixel_out (final add + sat + relu) ==
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sun Sep 13 20:14:56 2026
+| Host         : DESKTOP-3EUKBLL running 64-bit major release  (build 9200)
+| Command      : report_timing -to [get_cells -hier -filter {NAME =~ *pixel_out_reg*}] -max_paths 3 -path_type summary -return_string
+| Design       : top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Startpoint                     Endpoint                       Slack(ns)     
+----------------------------------------------------------------------------
+row_r_reg[2][3]/C              pixel_out_reg[13]/D            2.666         
+row_r_reg[2][3]/C              pixel_out_reg[10]/D            2.696         
+row_r_reg[2][3]/C              pixel_out_reg[3]/D             2.697         
+
+
+
+
