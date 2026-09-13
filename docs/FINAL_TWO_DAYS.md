@@ -15,6 +15,11 @@ Split: Amir runs the tools and draws; Claude drafts text. Both at once.
 
 ### Morning - one clean pass through the flow (~2 h)
 
+> Status Sunday evening: steps 1, 2 and 4 done - regression 22/22, project-flow
+> implementation reproduced the Friday numbers exactly (879 / 441 / 0 / 0, WNS +0.742,
+> 0.158 W, FoM 7.20e-3), docs updated. Step 3 (DRIVE 4) skipped by decision - no
+> experiments on the submission build. Next: tag, cleanup, then the report.
+
 **1. Regression** (5 min). ModelSim, project root:
 
     do sim/compile.do

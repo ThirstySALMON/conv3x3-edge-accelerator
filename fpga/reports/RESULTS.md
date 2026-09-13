@@ -128,3 +128,36 @@ cycle, so a higher clock only makes the FoM worse.
 Power split that matters for the tradeoffs section: static 0.107 W (68%), I/O pads
 0.042 W (27%), the logic + signals + clocks of the design itself ~0.009 W (6%). The RTL
 is a small part of the power term; the device and the 42 pads are the rest.
+
+## Final run, 13 Sep - numbers frozen
+
+Re-run from scratch in a fresh Vivado project (GUI flow, Run Synthesis / Run
+Implementation, SAIF read in afterwards) on the committed RTL:
+
+| | 11 Sep in-memory flow | 13 Sep project flow |
+|---|---|---|
+| LUTs | 879 | **879** |
+| FFs | 441 | **441** |
+| LUT as SRL | 16 | 16 |
+| DSP / BRAM | 0 / 0 | 0 / 0 |
+| WNS / WHS | +0.742 / +0.153 | **+0.742 / +0.153** |
+| power | 0.158 W (0.052 + 0.107) | **0.158 W (0.052 + 0.107)** |
+| FoM | 7.20e-3 | **7.20e-3** |
+
+Identical to the LUT and the picosecond - two different flows, two days apart, same
+answer. Vivado is deterministic for the same inputs and settings; the only thing that ever
+differs between reports is which stage they were taken at (post-synthesis is 910, an
+estimate before opt_design and LUT packing; post-route is 879 and is the number).
+
+These are the submission numbers. Tag v1.0-submission points at the RTL that produced
+them. No experiments were run on top of this.
+
+## The one DRC warning
+
+    ZPS7-1  Warning  PS7 block required
+    The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+
+Expected and harmless. The design is PL-only and never instantiates the ARM processing
+system; Vivado warns because a Zynq bitstream normally has the PS configure the PL. It has
+no effect on utilisation, timing or power, and a PL-only bitstream still loads over JTAG.
+Say this in the report so nobody has to ask.

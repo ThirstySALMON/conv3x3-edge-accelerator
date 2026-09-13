@@ -1,9 +1,9 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Fri Sep 11 18:06:09 2026
+| Date         : Sun Sep 13 20:12:06 2026
 | Host         : DESKTOP-3EUKBLL running 64-bit major release  (build 9200)
-| Command      : report_timing_summary -file C:/Users/HP/Desktop/conv3x3-edge-accelerator/fpga/reports/timing_summary.rpt
+| Command      : report_timing_summary -file fpga/reports/timing_summary.rpt
 | Design       : top
 | Device       : 7z020-clg400
 | Speed File   : -1  PRODUCTION 1.12 2019-11-22
