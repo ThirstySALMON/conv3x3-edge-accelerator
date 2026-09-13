@@ -30,3 +30,4 @@ __pycache__/
 
 # vivado jvm crash dumps
 hs_err_pid*.dmp
+dfx_runtime.txt
