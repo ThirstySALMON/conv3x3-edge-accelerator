@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 # input image next to what the RTL produced, from hex/image.hex and ../hw_out/<kernel>_out.hex
-#   python hw_to_png.py sobel_x [sobel_y ...]   -> ../docs/edge_demo_<kernel>.png
+#   python hw_to_png.py sobel_x [sobel_y ...]   -> ../docs/figures/edge_demo_<kernel>.png
 
 IMG = 32
 UP  = 6                      # 32 px is too small to look at, blow it up

@@ -108,7 +108,7 @@ re-run implementation in the GUI and update the table below. Expect WNS to impro
 roughly 1.5-2 ns; LUT count should be about the same, the logic moved rather than shrank.
 
 Re-implemented 11 Sep 18:06. Both changes in (registered edge flags + top-bits
-saturation). See docs/DESIGN_ITERATIONS.md for the reasoning.
+saturation). See docs/notes/DESIGN_ITERATIONS.md for the reasoning.
 
 | | baseline | now |
 |---|---|---|
@@ -121,7 +121,7 @@ saturation). See docs/DESIGN_ITERATIONS.md for the reasoning.
 | FoM | 6.264e-3 | **7.20e-3** |
 
 **These are the numbers for the report**, at 125 MHz (decided, see
-docs/POWER_METHODOLOGY.md). 137.8 MHz is reported separately under timing closure and is
+docs/notes/POWER_METHODOLOGY.md). 137.8 MHz is reported separately under timing closure and is
 deliberately NOT the FoM frequency: dynamic power scales with clock and throughput is per
 cycle, so a higher clock only makes the FoM worse.
 
