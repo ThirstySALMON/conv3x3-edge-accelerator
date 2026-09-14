@@ -41,8 +41,7 @@ this invariant on every cycle of every run.
 
 ## 3.3 Multiplier Implementation
 
-Nine instances of `mult8x8`, each carrying `(* use_dsp = "no" *)`; build.tcl additionally
-passes `-max_dsp 0`. Routed cost is 52-59 LUTs each, **496 LUTs for all nine - 56% of the
+Nine instances of `mult8x8`, each carrying `(* use_dsp = "no" *)`. Routed cost is 52-59 LUTs each, **496 LUTs for all nine - 56% of the
 design** - with zero DSP blocks inferred. The attribute is the only vendor-specific
 construct in the entire RTL; on another vendor's tool it becomes the equivalent directive
 and nothing else changes.
@@ -479,8 +478,8 @@ synthesis figure is an estimate taken before `opt_design` removes redundant logi
 placement packs small LUTs into shared LUT6 sites; the post-route number corresponds to
 physical resources and is used throughout.
 
-**How the zeros were achieved.** DSPs: the `use_dsp = "no"` attribute plus `-max_dsp 0`; the
-synthesis log confirms nine multipliers inferred with no DSP mapping. BRAM: the line buffers
+**How the zeros were achieved.** DSPs: the `use_dsp = "no"` attribute alone - the synthesis log
+for the submitted run records nine multipliers inferred with no DSP mapping and DSPs = 0 of 220. BRAM: the line buffers
 read only their final element, so Vivado infers **16 SRLC32E** primitives - two 8-bit-wide
 chains of eight - occupying 16 LUTs. No other memory primitive appears anywhere.
 

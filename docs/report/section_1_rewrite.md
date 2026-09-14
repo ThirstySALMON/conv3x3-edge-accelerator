@@ -91,8 +91,7 @@ one-pixel-per-cycle bonus.
 shift-register primitives occupying 16 LUTs, against the 100 LUT-equivalents a single BRAM
 tile would cost - a tile that would be 1.4% occupied.
 
-**Zero DSP blocks.** The `use_dsp = "no"` attribute plus `-max_dsp 0` at synthesis keeps all
-nine multipliers in fabric at 496 LUTs, against the 450 LUT-equivalents nine DSP48E1 blocks
+**Zero DSP blocks.** The `use_dsp = "no"` attribute keeps all nine multipliers in fabric at 496 LUTs, against the 450 LUT-equivalents nine DSP48E1 blocks
 would count. Close to neutral on the denominator alone, but it keeps the design in one
 fabric type with one power model, and leaves the RTL vendor-neutral apart from that single
 attribute.
