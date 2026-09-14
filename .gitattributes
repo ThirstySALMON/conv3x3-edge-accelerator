@@ -1,0 +1,16 @@
+# working notes and planning files stay in the repo but out of the submission archive
+# (git archive --format=zip -o conv3x3_submission.zip v1.0-submission)
+docs/CLAUDE.md                       export-ignore
+docs/SSCS2026_Gold_Plan.md           export-ignore
+docs/ARCHITECTURE_LOCKED.md          export-ignore
+docs/FINAL_TWO_DAYS.md               export-ignore
+docs/SUBMISSION_CHECKLIST.md         export-ignore
+docs/WAVEFORM_CAPTURES.md            export-ignore
+docs/BLOCK_DIAGRAM_NOTES.md          export-ignore
+docs/REPORT_OUTLINE.md               export-ignore
+docs/SLIDES_OUTLINE.md               export-ignore
+docs/competition_announcement.md     export-ignore
+golden_model/hramp_windows_all.txt      export-ignore
+golden_model/hramp_windows_all_grid.txt export-ignore
+.gitattributes                       export-ignore
+.gitignore                           export-ignore

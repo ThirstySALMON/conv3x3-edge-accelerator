@@ -2,27 +2,25 @@
 
 32x32 grayscale in, 3x3 programmable kernel, zero-padded (same) convolution, stride 1,
 one output pixel per cycle. 8-bit unsigned pixels, 8-bit signed coefficients, 20-bit
-accumulate, 16-bit saturated output, optional ReLU.
+accumulate, 16-bit saturated output, ReLU as a build parameter.
 
     rtl/           the design. cnn_pkg.sv holds every parameter, top.sv wires it up
-    tb/            testbenches (see the header of each)
+    tb/            testbenches, each says how to run it at the top
     sim/           modelsim scripts, run them from this directory
     golden_model/  python reference, input image, expected outputs, coefficient files
-    hw_out/        what the RTL produced in simulation - diffs clean against golden_model/hex
-    fpga/          vivado constraints and reports
-    docs/          report, architecture notes, checklists, waveform screenshots
+    hw_out/        what the RTL produced in simulation, byte-identical to golden_model/hex
+    fpga/          vivado constraints, scripts, bitstream, reports
+    docs/          notes, waveform screenshots, edge-detection renders
 
-Run it:
-
-    vsim -c -do "do sim/compile.do; do sim/run.do all; quit -f"
-
-or in the modelsim gui, from the project root:
+simulate:
 
     do sim/compile.do
-    do sim/run.do all            full regression
-    do sim/run.do sobel_x        one kernel, for looking at waves
-    do sim/waves/latency.do      then screenshot
+    do sim/run.do all            22 runs, 7 kernels x 3 stall modes + back to back frames
+    do sim/run.do sobel_x        one kernel, for waves
+    do sim/waves/latency.do      then export the wave window
 
-Regenerate the golden files after changing a kernel in golden.py:
+regenerate the golden files after changing a kernel in golden.py:
 
     cd golden_model && python golden.py hex/image.hex
+
+implementation: see fpga/README.md. numbers: fpga/reports/RESULTS.md.

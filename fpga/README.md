@@ -1,20 +1,18 @@
-target: PYNQ-Z2, xc7z020clg400-1, 125 MHz board clock. no board on hand - this is for the
-implementation numbers, the pinout is the real one so a bitstream would work if one turns up.
+target: PYNQ-Z2, xc7z020clg400-1, 125 MHz board clock (H16). all 42 pins are the real
+ones, so top.bit would load on the board - it just has nothing driving the pins, a demo
+needs a wrapper.
 
-    pynq_z2.xdc     clock + all 42 pins + a nominal io budget
-    saif.bat        runs tb_top in xsim, writes tb_top.saif (real switching activity for the power report)
-    build.tcl       vivado -mode batch -source fpga/build.tcl   (from the project root)
-    reports/        utilization, timing summary, power, drc, summary.txt with the table numbers
+    pynq_z2.xdc     clock, all 42 pins, io false-pathed (no external timing contract)
+    saif.bat        reruns tb_top in xsim, writes tb_top.saif for the power report
+    build.tcl       whole flow, no project:  vivado -mode tcl  then  source fpga/build.tcl
+    paths.tcl       worst paths per pipeline stage, implemented design open
+    top.bit         bitstream, PL only
+    reports/        utilization (+hier, +synth), timing, paths, power, drc, io, synth.log
 
-power: build.tcl sets toggle rates by hand (see the comment next to report_power) because
-xsim does not run on this machine - "Unknown error occured while verifying the digital
-signature. Error Code: -2146869232", on any design, including a two line $display. saif.bat
-is left in place for a machine where xsim works; build.tcl uses fpga/tb_top.saif if it finds
-one and falls back to the manual numbers otherwise. report_power says Low confidence either
-way unless a saif is present - say which method was used in the report.
+order: saif.bat first, then build.tcl (it picks the saif up by itself), then paths.tcl.
 
-after a run, summary.txt must say DSPs 0 and BRAM 0. LUT as shift register should be 16:
-vivado turns both line buffers into SRL32E because nothing reads the middle elements, so
-they cost 16 LUTs instead of 512 FFs. that is the better result, leave it alone.
+sanity after a run: DSP 0, BRAM 0, LUT as shift register 16 (the two line buffers, that
+is the good outcome), WNS >= 0. the one DRC warning is ZPS7-1, expected for a PL-only zynq
+design.
 
-results are written up in reports/RESULTS.md - read that before the three .rpt files.
+reports/RESULTS.md has the numbers written up; read that before the .rpt files.
