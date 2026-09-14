@@ -2,11 +2,8 @@ import sys, os
 import numpy as np
 from PIL import Image
 
-# renders what the RTL actually produced next to the input, for the report.
-#   python hw_to_png.py sobel_x            -> ../docs/edge_demo_sobel_x.png
-#   python hw_to_png.py sobel_x sobel_y    -> one image per kernel
-# reads hex/image.hex and ../hw_out/<kernel>_out.hex - the hardware outputs, not the
-# golden ones, so the picture is evidence and not just the model again.
+# input image next to what the RTL produced, from hex/image.hex and ../hw_out/<kernel>_out.hex
+#   python hw_to_png.py sobel_x [sobel_y ...]   -> ../docs/edge_demo_<kernel>.png
 
 IMG = 32
 UP  = 6                      # 32 px is too small to look at, blow it up

@@ -1,6 +1,5 @@
 # compile everything, in order. run from the project root:  do sim/compile.do
-# cnn_pkg goes first - the other files import it and modelsim resolves that
-# against the library, not the file list.
+# cnn_pkg must go first - importers resolve it from the library, not the file list
 
 if {![file isdirectory sim/work]} { vlib sim/work }
 vmap work sim/work

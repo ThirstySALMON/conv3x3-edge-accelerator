@@ -2,15 +2,13 @@
 `timescale 1ns/1ps
 import cnn_pkg::*;
 
-// everything in one run: each kernel clean / fixed stalls / random stalls, two
-// frames back to back with a kernel swap in between, and a RELU=1 copy of top
-// on the same stimulus. writes hw_out/<kernel>_out.hex and _relu_out.hex.
+// all kernels clean/fixed/random stalls, back-to-back frames with a kernel swap, RELU=1 copy alongside
+// writes hw_out/<kernel>_out.hex and _relu_out.hex
 //   do sim/run.do all
 module tb_top_all;
 
 localparam string HEX = "golden_model/hex/";
-// satmax/satmin are not real filters, they push the accumulator past +/-32767 so the
-// saturation branches get exercised instead of only being argued about on paper.
+// satmax/satmin aren't real filters, they just drive the accumulator past +/-32767
 string KERNELS [7] = '{"identity", "sobel_x", "sobel_y", "sharpen", "laplacian",
                        "satmax", "satmin"};
 
@@ -163,8 +161,7 @@ initial begin
             if (mode == 0) dump(KERNELS[k]);
         end
 
-    // two frames with no idle gap. new coeffs go in the moment busy drops,
-    // while frame 1's last three outputs are still coming out.
+    // no idle gap: new coeffs go in the moment busy drops, frame 1's last 3 outputs still draining
     clear_run();
     load("sobel_x");
     stream(0);

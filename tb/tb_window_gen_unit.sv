@@ -35,17 +35,16 @@ module tb_window_gen_unit;
         logic [IN_W-1:0] in_f, in_c;
         int k;
         begin
-            // line buffer outputs are the OLDEST element (about to fall out)
+            // line buffer output is the oldest element, index 0 is newest
             in_f = s_lb0[LB_DEPTH-1];
             in_c = s_lb1[LB_DEPTH-1];
-            // shift line buffers (index 0 is newest)
             for (k = LB_DEPTH-1; k > 0; k--) begin
                 s_lb0[k] = s_lb0[k-1];
                 s_lb1[k] = s_lb1[k-1];
             end
-            s_lb0[0] = pix;      // input -> lb0
-            s_lb1[0] = in_f;     // lb0 out -> lb1
-            // shift tap rows (newest column at index 2/5/8)
+            s_lb0[0] = pix;
+            s_lb1[0] = in_f;
+            // newest column is 2/5/8, row 0 is the oldest line
             s_tap[0] = s_tap[1]; s_tap[1] = s_tap[2]; s_tap[2] = in_c;
             s_tap[3] = s_tap[4]; s_tap[4] = s_tap[5]; s_tap[5] = in_f;
             s_tap[6] = s_tap[7]; s_tap[7] = s_tap[8]; s_tap[8] = pix;
@@ -60,8 +59,7 @@ module tb_window_gen_unit;
         end
     endtask
 
-    // compare DUT taps against shadow, with the SAME edge zeroing applied to the
-    // shadow so we test shift + mux together.
+    // same edge zeroing applied to the shadow, so shift + mux are checked together
     task automatic check_taps(input string tag,
                               input logic te, input logic be,
                               input logic le, input logic re);
@@ -91,8 +89,8 @@ module tb_window_gen_unit;
             input_in = pix; en = do_en;
             top_edge = te; bottom_edge = be; left_edge = le; right_edge = re;
             @(posedge clk);
-            if (do_en) shadow_step(pix);   // DUT shifts only when en
-            #1; // let combinational tap_out settle after the edge
+            if (do_en) shadow_step(pix);
+            #1; // let tap_out settle after the edge
         end
     endtask
 
@@ -100,7 +98,6 @@ module tb_window_gen_unit;
     logic [IN_W-1:0] held [0:8];
 
     initial begin
-        // ---- reset (synchronous): hold rst_n low across a few edges ----
         rst_n = 0; en = 0; input_in = 0;
         top_edge = 0; bottom_edge = 0; left_edge = 0; right_edge = 0;
         shadow_clear();
@@ -108,20 +105,17 @@ module tb_window_gen_unit;
         rst_n = 1;
         @(posedge clk); #1;
 
-        // ================= TEST 1: shift correctness on a ramp =================
-        // Stream enough pixels to fully populate both line buffers + taps, then
-        // check every cycle. Values chosen so each pixel is distinct mod 256.
+        // test 1: ramp long enough to fill both line buffers + taps, check every cycle
         for (i = 0; i < 3*LB_DEPTH + 20; i++) begin
             step(i[7:0], 1'b1, 0,0,0,0);
             check_taps("T1-shift", 0,0,0,0);
         end
         $display("TEST 1 (shift correctness): done, errors so far = %0d", errors);
 
-        // ================= TEST 2: stall freeze =================
-        // Snapshot taps, drop en for 5 cycles, confirm nothing moves, then resume.
+        // test 2: drop en for 5 cycles, taps must not move
         for (i = 0; i < 9; i++) held[i] = tap_out[i];
         for (i = 0; i < 5; i++) begin
-            step(8'hEE, 1'b0, 0,0,0,0);   // en low: DUT must freeze
+            step(8'hEE, 1'b0, 0,0,0,0);
             for (int k = 0; k < 9; k++) begin
                 if (tap_out[k] !== held[k]) begin
                     errors++;
@@ -130,30 +124,27 @@ module tb_window_gen_unit;
                 end
             end
         end
-        // resume: one enabled step should shift again normally
         step(8'hAB, 1'b1, 0,0,0,0);
         check_taps("T2-resume", 0,0,0,0);
         $display("TEST 2 (stall freeze): done, errors so far = %0d", errors);
 
-        // ================= TEST 3: single-edge zeroing =================
+        // test 3: single-edge zeroing
         step(8'h11, 1'b1, /*top*/1,0,0,0);  check_taps("T3-top",    1,0,0,0);
         step(8'h22, 1'b1, 0,/*bot*/1,0,0);  check_taps("T3-bottom", 0,1,0,0);
         step(8'h33, 1'b1, 0,0,/*left*/1,0); check_taps("T3-left",   0,0,1,0);
         step(8'h44, 1'b1, 0,0,0,/*right*/1);check_taps("T3-right",  0,0,0,1);
-        // center tap must be nonzero-capable: verify tap 4 tracks the shadow
+        // tap 4 is never zeroed by any edge
         if (tap_out[4] !== s_tap[4]) begin
             errors++; $display("  MISMATCH [T3-center] tap4 got %02h exp %02h",
                                tap_out[4], s_tap[4]);
         end
         $display("TEST 3 (single-edge zeroing): done, errors so far = %0d", errors);
 
-        // ================= TEST 4: corner overlap =================
+        // test 4: corners (two edges at once)
         step(8'h55, 1'b1, /*T*/1,0,/*L*/1,0); check_taps("T4-topleft",     1,0,1,0);
         step(8'h66, 1'b1, /*T*/1,0,0,/*R*/1); check_taps("T4-topright",    1,0,0,1);
         step(8'h77, 1'b1, 0,/*B*/1,/*L*/1,0); check_taps("T4-botleft",     0,1,1,0);
         step(8'h88, 1'b1, 0,/*B*/1,0,/*R*/1); check_taps("T4-botright",    0,1,0,1);
-        // explicit corner sanity: top-left must zero tap0 (both), tap1,2 (top),
-        // tap3,6 (left); center tap4 must still equal shadow.
         step(8'h99, 1'b1, 1,0,1,0);
         if (tap_out[0]!==0 || tap_out[1]!==0 || tap_out[2]!==0 ||
             tap_out[3]!==0 || tap_out[6]!==0) begin
@@ -164,7 +155,6 @@ module tb_window_gen_unit;
         end
         $display("TEST 4 (corner overlap): done, errors so far = %0d", errors);
 
-        // ---- verdict ----
         if (errors == 0)
             $display("\nPASS: window_gen unit tests all clean (shift, stall, edges, corners).");
         else

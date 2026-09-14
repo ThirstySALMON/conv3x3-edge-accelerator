@@ -10,8 +10,7 @@ KERNELS = {
     "sobel_y":   [[-1,-2,-1],[0,0,0],[1,2,1]],
     "sharpen":   [[0,-1,0],[-1,5,-1],[0,-1,0]],
     "laplacian": [[0,1,0],[1,-4,1],[0,1,0]],
-    # not a real filter - drives the accumulator past +/-32767 so the RTL
-    # saturation branches actually get exercised against the model
+    # not real filters, just push the accumulator past +/-32767 to hit the saturation paths
     "satmax":    [[127,127,127],[127,127,127],[127,127,127]],
     "satmin":    [[-128,-128,-128],[-128,-128,-128],[-128,-128,-128]],
 }
@@ -34,7 +33,7 @@ def conv(img, k, relu=False):
     return out
 
 def load_image(path):
-    if path.endswith(".hex"):   # reuse an existing image.hex so the outputs stay in sync with it
+    if path.endswith(".hex"):   # reuse an existing image.hex so outputs stay in sync
         v = [int(l, 16) for l in open(path) if l.strip()]
         return np.array(v, dtype=np.uint8).reshape(IMG, IMG)
     from PIL import Image

@@ -36,8 +36,7 @@ module control_fsm (
         endcase
     end
 
-    // next output position, so the edge flags can be registered instead of falling out
-    // of a comparator into the tap muxes and the multipliers in the same cycle.
+    // next position computed here so edge flags can be registered, keeps the comparators off the tap-mux path
     always_comb begin
         nxt_c = out_c;
         nxt_r = out_r;
@@ -75,14 +74,14 @@ module control_fsm (
         endcase
     end
 
-     always_ff @(posedge clk) begin           // synchronous reset (intentional)
+     always_ff @(posedge clk) begin           // sync reset
         if (!rst_n) begin
             state     <= S_IDLE;
             in_cnt    <= '0;
             out_r     <= '0;
             out_c     <= '0;
             drain_cnt <= '0;
-            top_edge    <= 1'b1;      // position (0,0)
+            top_edge    <= 1'b1;      // reset flags match pixel (0,0)
             bottom_edge <= 1'b0;
             left_edge   <= 1'b1;
             right_edge  <= 1'b0;

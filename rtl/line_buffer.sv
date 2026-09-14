@@ -1,8 +1,6 @@
 import cnn_pkg::*;
 
-// One full row of vertical delay: DEPTH-deep, IN_W-wide FF/LUTRAM shift
-// register. Deliberately NOT a BRAM (100x FoM penalty). en-gated so a
-// stall freezes the whole pipeline coherently.
+// one image row of delay, kept as FF/LUTRAM shift reg - BRAM costs ~100x in FoM
 module line_buffer #(
     parameter int DEPTH = LB_DEPTH,
     parameter int WIDTH = IN_W
@@ -17,7 +15,7 @@ module line_buffer #(
 
     logic [WIDTH-1:0] sr [0:DEPTH-1];
 
-    always_ff @(posedge clk) begin           // synchronous reset (intentional)
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             for (int i = 0; i < DEPTH; i++)
                 sr[i] <= '0;
@@ -28,6 +26,6 @@ module line_buffer #(
         end
     end
 
-    assign d_out = sr[DEPTH-1];              // oldest element falls out
+    assign d_out = sr[DEPTH-1];
 
 endmodule

@@ -2,10 +2,9 @@
 `timescale 1ns/1ps
 import cnn_pkg::*;
 
-// one kernel, one frame. image in -> pixel_out, diffed against the golden hex.
+// one frame through top, diffed against the golden hex, output saved to hw_out/<kernel>_out.hex
 //   vsim work.tb_top +KERNEL=sobel_x            (default)
 //   vsim work.tb_top +KERNEL=sharpen +STALL=1   drops valid_in a few times mid frame
-// writes hw_out/<kernel>_out.hex. window level checks live in tb_top_window.sv.
 module tb_top;
 
 string kernel = "sobel_x";

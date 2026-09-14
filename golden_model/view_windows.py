@@ -80,7 +80,7 @@ def main():
     if sel == "all":
         idx = range(IMG_W * IMG_H)
     elif sel in ("valid", "interior"):
-        # 30x30 valid-conv subset: the windows that need no zero padding.
+        # 30x30 interior, no zero padding involved
         idx = [r * IMG_W + c for r in range(1, IMG_H - 1) for c in range(1, IMG_W - 1)]
     elif "," in sel:
         r, c = (int(x) for x in sel.split(","))

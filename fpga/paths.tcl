@@ -1,7 +1,6 @@
-# which stage is actually the tightest? report_timing_summary only prints the single
-# worst path, which hides whether the other two stages are close behind.
+# per-stage worst paths, since report_timing_summary only shows the single worst
 # with the implemented design open:  source fpga/paths.tcl
-# prints to the console and writes fpga/reports/paths.rpt
+# writes fpga/reports/paths.rpt and echoes it
 set f fpga/reports/paths.rpt
 set fh [open $f w]
 

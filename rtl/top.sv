@@ -1,20 +1,9 @@
 import cnn_pkg::*;
 
-// Top level: control_fsm + window_gen + coeff_reg + 9 LUT multipliers +
-// pipelined adder tree -> saturate -> ReLU (RELU_EN) -> pixel_out.
-// 1 output pixel/cycle. win_valid -> valid_out latency = 3 cycles.
-//
-//   comb  : prod[k] = tap_out[k] * coef[k]             9 x 16b
-//   reg 1 : prod_r, v_prod
-//   comb  : row_sum = a+b+c | d+e+f | g+h+i            3 x 18b
-//   reg 2 : row_r, v_row
-//   comb  : acc = row0+row1+row2 -> saturate -> relu   20b -> 16b
-//   reg 3 : pixel_out, valid_out
-//
-// Pipeline regs are free-running; the valid bit travels with the data, so a
-// valid_in stall shows up as a bubble in valid_out 3 cycles later.
+// top: fsm + window_gen + coeff_reg + 9 mults + 3-stage adder tree -> sat -> relu
+// 1 pixel/cycle, win_valid -> valid_out is 3 cycles; a valid_in stall shows up as a bubble
 module top #(
-    parameter bit RELU = RELU_EN   // package default; tb_top_all overrides it to test both builds
+    parameter bit RELU = RELU_EN
 ) (
     input  logic            clk,
     input  logic            rst_n,
@@ -22,20 +11,17 @@ module top #(
     input  logic [IN_W-1:0] input_in,
     input  logic            valid_in,
 
-    // kernel load, ignored while busy. write_addr = 3*row + col, same
-    // row-major order as the taps (0 = a = w00 ... 8 = i = w22).
+    // kernel load, ignored while busy; write_addr = 3*row + col, row-major like the taps (0 = w00 .. 8 = w22)
     input  logic              write_en,
     input  logic [3:0]        write_addr,
     input  logic [COEF_W-1:0] data_write,
-
-    //output logic [IN_W-1:0] taps [0:NTAP-1], // comment out , for debug
 
     output logic signed [OUT_W-1:0] pixel_out,
     output logic                    valid_out,
     output logic                    busy
 );
 
-    // Sum of 3 products: 3 * 255 * 128 = 97_920 -> 18 bits signed, lossless.
+    // 3 * 255 * 128 = 97920 -> 18b signed
     localparam int ROW_W = PROD_W + 2;
 
     logic top_edge, bottom_edge, left_edge, right_edge;
@@ -52,7 +38,7 @@ module top #(
     logic signed [OUT_W-1:0]  sat, relu_out;
     logic                     v_prod, v_row;
 
-    control_fsm u_cu (  // Control FSM
+    control_fsm u_cu (
         .clk(clk),
         .rst_n(rst_n),
         .valid_in(valid_in),
@@ -67,7 +53,7 @@ module top #(
         .frame_done(frame_done)
     );
 
-    window_gen u_wg (  // Window generator
+    window_gen u_wg (
         .clk(clk),
         .rst_n(rst_n),
         .input_in(input_in),
@@ -82,9 +68,7 @@ module top #(
         .tap_out(tap_out)
     );
 
-//    assign taps = tap_out; // comment out , for debug
-
-    coeff_reg u_cr (  // Coefficient register, write-locked while busy
+    coeff_reg u_cr (  // write-locked while busy
         .clk(clk),
         .rst_n(rst_n),
         .write_en(write_en),
@@ -95,7 +79,6 @@ module top #(
         .coef_out(coef)
     );
 
-    // ---------------- 9 multipliers -> stage 1 ----------------
     genvar k;
     generate
         for (k = 0; k < NTAP; k++) begin : g_mul
@@ -104,8 +87,7 @@ module top #(
     endgenerate
 
 
-    // First pipeline regs
-    always_ff @(posedge clk) begin           // synchronous reset (intentional)
+    always_ff @(posedge clk) begin
         if (!rst_n) begin
             for (int i = 0; i < NTAP; i++) prod_r[i] <= '0;
             v_prod <= 1'b0;
@@ -115,13 +97,10 @@ module top #(
         end
     end
 
-    // ---------------- row adders -> stage 2 ----------------
-    assign row_sum[0] = prod_r[0] + prod_r[1] + prod_r[2];   // a+b+c
-    assign row_sum[1] = prod_r[3] + prod_r[4] + prod_r[5];   // d+e+f
-    assign row_sum[2] = prod_r[6] + prod_r[7] + prod_r[8];   // g+h+i
+    assign row_sum[0] = prod_r[0] + prod_r[1] + prod_r[2];
+    assign row_sum[1] = prod_r[3] + prod_r[4] + prod_r[5];
+    assign row_sum[2] = prod_r[6] + prod_r[7] + prod_r[8];
 
-
-    //Second pipeline reg
     always_ff @(posedge clk) begin
         if (!rst_n) begin
             for (int i = 0; i < KSIZE; i++) row_r[i] <= '0;
@@ -132,15 +111,10 @@ module top #(
         end
     end
 
-    // ---------------- final adder, saturate, relu -> stage 3 ----------------
     assign acc = row_r[0] + row_r[1] + row_r[2];
 
-    // Saturation by sign-extension check rather than two 20-bit magnitude compares.
-    // acc fits in OUT_W signed exactly when the upper bits are all copies of bit
-    // OUT_W-1, so testing acc[ACC_W-1:OUT_W-1] for all-ones / all-zeros is the same
-    // answer for every value of acc, in 2 LUTs instead of two carry chains.
-    // Verified exhaustively over all 2^20 accumulator values.
-    logic [ACC_W-OUT_W:0] acc_top;       // acc[19:15], 5 bits
+    // saturate via sign-extension check (top 5 bits all equal) instead of two 20b compares
+    logic [ACC_W-OUT_W:0] acc_top;
     logic                 fits;
 
     assign acc_top = acc[ACC_W-1 -: (ACC_W-OUT_W+1)];
@@ -148,11 +122,11 @@ module top #(
 
     always_comb begin
         if (fits)            sat = acc[OUT_W-1:0];
-        else if (acc[ACC_W-1]) sat = OUT_MIN[OUT_W-1:0];   // negative -> -32768
-        else                   sat = OUT_MAX[OUT_W-1:0];   // positive -> +32767
+        else if (acc[ACC_W-1]) sat = OUT_MIN[OUT_W-1:0];
+        else                   sat = OUT_MAX[OUT_W-1:0];
     end
 
-    assign relu_out = (RELU && sat[OUT_W-1]) ? '0 : sat;   // clip negatives
+    assign relu_out = (RELU && sat[OUT_W-1]) ? '0 : sat;
 
     always_ff @(posedge clk) begin
         if (!rst_n) begin

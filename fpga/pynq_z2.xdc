@@ -1,14 +1,12 @@
-## PYNQ-Z2, xc7z020clg400-1. 42 pins.
-## clk = 125 MHz from the ethernet PHY, SW0 = reset, PmodA = pixel in, PmodB = coeff data,
-## arduino header = control, RPi header = pixel out, LED0/1 = valid_out / busy.
-## no board on hand, this is for implementation numbers. a real demo wants a 2-flop
-## synchronizer on rst_n in a wrapper - the core uses it as a synchronous reset.
+## PYNQ-Z2 (xc7z020clg400-1) pinout, 42 pins, clk 125 MHz from the ethernet PHY
+## PmodA pixel in, PmodB coeff data, arduino hdr control, RPi hdr pixel out, LED0/1 valid_out/busy
+## a real demo needs a 2-flop synchronizer on rst_n in a wrapper, core treats it as a sync reset
 
 ## clock
 set_property -dict { PACKAGE_PIN H16 IOSTANDARD LVCMOS33 } [get_ports clk]
 create_clock -period 8.000 -name clk -waveform {0.000 4.000} [get_ports clk]
 
-## SW0 up = run, down = reset. rst_n is active low and the switch is not inverted, so no logic needed
+## SW0 up = run, down = reset, active low matches the switch so no inverter
 set_property -dict { PACKAGE_PIN M20 IOSTANDARD LVCMOS33 } [get_ports rst_n]
 set_false_path -from [get_ports rst_n]
 
@@ -62,10 +60,8 @@ set_property -dict { PACKAGE_PIN W6  IOSTANDARD LVCMOS33 } [get_ports {pixel_out
 set_property -dict { PACKAGE_PIN R14 IOSTANDARD LVCMOS33 } [get_ports valid_out]
 set_property -dict { PACKAGE_PIN P14 IOSTANDARD LVCMOS33 } [get_ports busy]
 
-## nothing external clocks these pins - there is no board and no interface timing contract,
-## so io paths are excluded and what gets reported is the core register-to-register Fmax.
-## with an invented 1ns io budget instead, all 84 failures were pad delay: the 3v3 OBUF
-## alone is 3.5ns of an 8ns period. say this in the timing section of the report.
+## no external timing contract on these pins, so io paths are cut and Fmax is reg-to-reg only
+## with a 1ns io budget every failure was pad delay, the 3v3 OBUF alone eats 3.5ns of the 8ns period
 set_false_path -from [all_inputs] -to [all_registers]
 set_false_path -from [all_registers] -to [all_outputs]
 set_false_path -from [get_ports rst_n]

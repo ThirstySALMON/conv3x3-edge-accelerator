@@ -1,4 +1,4 @@
-# shared wave window setup for the report screenshots. 10ns clock, one gridline per cycle.
+# shared wave window setup, 10ns clock, one gridline per cycle
 view wave
 delete wave *
 configure wave -timelineunits ns

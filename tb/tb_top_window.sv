@@ -2,22 +2,8 @@
 `timescale 1ns/1ps
 import cnn_pkg::*;
 
-// Window-generation test AT THE TOP LEVEL. Split out of tb_top.sv.
-//
-// Scope: control_fsm + window_gen as integrated inside top -- the taps, the
-// raster position, the edge flags, and the gapless win_valid stream. It stops
-// at the window; it does NOT look at pixel_out. The arithmetic datapath
-// (coeffs -> multipliers -> adders -> saturate -> relu) is tb_top.sv's job.
-//
-// Checks, every win_valid cycle:
-//   1. all 9 taps match the golden window vector (row-major, spec S8)
-//   2. the FSM's (out_r, out_c) matches the expected raster position
-//   3. the four edge flags match that position
-//   4. no gap between consecutive win_valid cycles
-// Plus fill latency == FILL_CYCLES and exactly NPIX windows per frame.
-//
-// Complements tb_window_gen_unit.sv, which direct-drives en/flags to test
-// window_gen in isolation. This one proves the FSM drives it correctly.
+// window_gen + control_fsm checked at the top level: taps, raster position,
+// edge flags, gapless win_valid. pixel_out is not checked here
 module tb_top_window;
 
 logic  clk = 0;
@@ -28,8 +14,8 @@ logic             valid_in;
 logic             write_en   = 1'b0;    // coefficients irrelevant here
 logic [3:0]       write_addr = 4'd0;
 logic [7:0]       data_write = 8'd0;
-logic [15:0]      pixel_out;            // observed but not checked
-logic             valid_out;            // observed but not checked
+logic [15:0]      pixel_out;            
+logic             valid_out;            
 logic             busy;
 
 top dut (
@@ -47,12 +33,12 @@ initial begin
     $dumpvars(0, tb_top_window);
 end
 
-// Golden windows: 1024 lines x 9 bytes, row-major tap order (see spec S8).
+// golden windows: NPIX lines x 9 bytes, row-major tap order
 logic [7:0] gwin [0:NPIX*9-1];
 initial $readmemh("golden_model/vectors/hramp_windows_same.hex", gwin);
 
 int  cyc            = 0;   // cycles since reset release
-int  win_cnt        = 0;   // windows accepted so far
+int  win_cnt        = 0;   
 int  tap_err        = 0;
 int  pos_err        = 0;
 int  gap_err        = 0;
@@ -61,7 +47,6 @@ int  first_con_cyc  = -1;
 int  last_win_cyc   = -1;
 int  exp_r, exp_c;
 
-// helper
 function automatic string sname(input logic [2:0] s);
     case (s)
         3'd0: sname = "IDLE  ";
@@ -73,7 +58,6 @@ function automatic string sname(input logic [2:0] s);
     endcase
 endfunction
 
-// FSM transition trace
 logic [2:0] prev_state = 3'd0;
 always @(posedge clk) if (rst_n) begin
     if (dut.u_cu.state !== prev_state)
@@ -83,8 +67,7 @@ always @(posedge clk) if (rst_n) begin
     prev_state = dut.u_cu.state;
 end
 
-// Scoreboard: every win_valid cycle must present the next golden window at the
-// right raster position, with the right edge flags, and with no gap.
+// scoreboard, runs every win_valid cycle
 always @(posedge clk) if (rst_n) begin
     cyc = cyc + 1;
     if (dut.en && first_con_cyc < 0) first_con_cyc = cyc;
@@ -131,7 +114,7 @@ always @(posedge clk) if (rst_n) begin
     end
 end
 
-integer i;                              // loop var for the stream
+integer i;                              
 
 initial begin
     logic [7:0] in_hex[0:NPIX-1];
@@ -141,7 +124,7 @@ initial begin
     repeat (4) @(posedge clk);
     rst_n <= 1;
 
-    // stream the frame: 1024 pixels, gapless, one per cycle.
+    // stream the frame gapless, one pixel per cycle
     valid_in <= 1'b0;
     input_in <= 8'h00;
     @(posedge clk);
@@ -152,8 +135,7 @@ initial begin
         @(posedge clk);
     end
 
-    // Input exhausted. Garbage on the bus during drain: bottom_edge/right_edge
-    // must mask it out of every remaining window.
+    // garbage on the bus during drain, bottom/right edge flags must mask it
     valid_in <= 1'b0;
     input_in <= 8'hA5;
     @(posedge clk);

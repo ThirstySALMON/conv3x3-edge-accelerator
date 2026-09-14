@@ -1,9 +1,6 @@
-# do sim/run.do all              everything: 5 kernels x (clean, stalls, random stalls), 2 frames back to back, relu build
-# do sim/run.do kernels          the five kernels one after another through tb_top, writes hw_out/
-# do sim/run.do sobel_x [1]      one kernel end to end, second arg 1 = inject stalls
-# do sim/run.do window           taps / fsm / edge flags at top level
-# do sim/run.do unit             window_gen on its own
-# compile first (do sim/compile.do). run from the project root.
+# questa run script, from project root after do sim/compile.do
+# do sim/run.do all | kernels | window | unit | <kernel> [1]
+# kernels writes hw_out/, second arg 1 on a single kernel injects stalls
 
 if {$argc < 1} { echo "usage: do sim/run.do all|kernels|window|unit|<kernel> \[stall\]"; return }
 set what $1

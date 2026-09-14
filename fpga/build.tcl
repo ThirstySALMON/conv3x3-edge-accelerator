@@ -1,7 +1,6 @@
-# synth + impl for the pynq-z2 part, no project, no clicking. from the project root:
+# non-project synth + impl for pynq-z2, run from the project root:
 #   vivado -mode batch -source fpga/build.tcl
-# reports land in fpga/reports/. if fpga/tb_top.saif exists (run fpga/saif.bat first) the power
-# report uses real switching activity instead of the vivado default toggle guess.
+# reports land in fpga/reports/, power uses fpga/tb_top.saif if present (fpga/saif.bat makes it)
 
 set part xc7z020clg400-1
 set out  fpga/reports
@@ -24,13 +23,7 @@ report_utilization    -hierarchical -file $out/utilization_hier.rpt
 report_timing_summary -file $out/timing_summary.rpt
 report_drc            -file $out/drc.rpt
 
-# switching activity. a saif from xsim would be better (report_power says High confidence
-# instead of Low) but xsim is broken on this machine - "Unknown error occured while
-# verifying the digital signature", any design, even a two line $display. so instead the
-# toggle rates are set by hand from what the testbench actually does:
-#   input_in / taps / products - a real image streaming 1 px/cycle, roughly random 8-bit
-#   valid_in, en, win_valid    - high for the whole frame except stalls
-#   write_en, write_addr, data_write - 9 writes at the start of a frame, then idle
+# no saif: hand-set toggle rates, pixels ~random 8-bit at 1 px/cycle, 9 coeff writes per frame then idle
 if {[file exists fpga/tb_top.saif]} {
     read_saif fpga/tb_top.saif -strip_path tb_top/dut
     puts "power: using fpga/tb_top.saif"
@@ -45,9 +38,8 @@ if {[file exists fpga/tb_top.saif]} {
 report_power -file $out/power.rpt
 
 write_checkpoint -force $out/routed.dcp
-# write_bitstream -force fpga/top.bit     ;# only if a board turns up
 
-# pull the table numbers out so nobody has to read three reports
+# one-screen summary scraped from the report tables
 set u [report_utilization -return_string]
 set p [report_power -return_string]
 proc grab {txt re} { if {[regexp $re $txt -> v]} { return $v } else { return "?" } }
